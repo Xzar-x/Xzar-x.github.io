@@ -121,8 +121,8 @@
   const LANG_KEY = 'xzar-lang';
   const THEME_LIGHT = 'light';
   const THEME_DARK = 'dark';
-  const LABEL_LIGHT = 'Trust';
-  const LABEL_DARK = 'Hacker';
+  const LABEL_LIGHT = 'Light';
+  const LABEL_DARK = 'Dark';
   const LANG_EN = 'en';
   const LANG_PL = 'pl';
 
@@ -164,7 +164,6 @@
   function applyTheme(theme) {
     root.setAttribute('data-theme', theme);
     toggleLabel.textContent = theme === THEME_DARK ? LABEL_DARK : LABEL_LIGHT;
-    syncGlitchAttributes();
   }
 
   function detectSystemTheme() {
@@ -194,7 +193,6 @@
       flag.classList.toggle('active', flag.getAttribute('data-lang-active') === lang);
     });
 
-    syncGlitchAttributes();
   }
 
   /* ==========================================================
