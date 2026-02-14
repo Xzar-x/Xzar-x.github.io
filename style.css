@@ -201,12 +201,31 @@ section {
 
 /* ---- Logo ---- */
 .logo {
+  display: flex;
+  align-items: center;
+  gap: .6rem;
   font-size: 1.55rem;
   font-weight: 700;
   letter-spacing: 1px;
   color: var(--text-primary);
   transition: color var(--transition);
   position: relative;
+}
+
+.logo__img {
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+  border-radius: 6px;
+  transition: transform var(--transition), filter var(--transition);
+}
+
+.logo:hover .logo__img {
+  transform: scale(1.1) rotate(-5deg);
+}
+
+[data-theme="dark"] .logo__img {
+  filter: drop-shadow(0 0 6px rgba(0, 255, 156, .4));
 }
 
 [data-theme="dark"] .logo {
@@ -309,9 +328,58 @@ section {
   overflow: hidden;
 }
 
+/* Banner background — dark mode */
+[data-theme="dark"] .hero {
+  background: url('baner.jpg') center center / cover no-repeat;
+}
+
+[data-theme="dark"] .hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(5, 10, 15, .70);
+  z-index: 1;
+}
+
 .hero__content {
   position: relative;
   z-index: 2;
+}
+
+/* Hero logo */
+.hero__logo-wrap {
+  margin-bottom: 1.8rem;
+  display: flex;
+  justify-content: center;
+}
+
+.hero__logo {
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+  border-radius: 20px;
+  animation: logoFloat 4s ease-in-out infinite;
+  transition: filter var(--transition);
+}
+
+[data-theme="light"] .hero__logo {
+  filter: drop-shadow(0 4px 20px rgba(99, 102, 241, .25));
+}
+
+[data-theme="dark"] .hero__logo {
+  filter: drop-shadow(0 0 20px rgba(0, 255, 156, .35)) drop-shadow(0 0 40px rgba(0, 255, 156, .15));
+}
+
+@keyframes logoFloat {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
 }
 
 .hero__badge {
