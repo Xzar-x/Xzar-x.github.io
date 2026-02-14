@@ -17,7 +17,7 @@
     <div class="container">
       <a href="#" class="logo" aria-label="Home">
         <img src="logo.png" alt="Xzar-x Logo" class="logo__img" />
-        <span class="logo__text">Xzar-x</span>
+        <span class="logo__text">Xzar</span>
       </a>
 
       <div class="header__controls">
@@ -44,9 +44,6 @@
     <div class="hero__orb hero__orb--2" aria-hidden="true"></div>
 
     <div class="hero__content container">
-      <div class="hero__logo-wrap" aria-hidden="true">
-        <img src="logo.png" alt="" class="hero__logo" />
-      </div>
       <span class="hero__badge" data-i18n="hero.badge">Developer &amp; Automator</span>
 
       <h1 class="hero__title">
@@ -272,6 +269,42 @@
           </div>
         </a>
       </div>
+    </div>
+  </section>
+
+  <!-- ====== CONTACT FORM ====== -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <div class="section-heading reveal">
+        <span class="section-heading__tag" data-i18n="contact.tag">Contact</span>
+        <h2 class="section-heading__title" data-i18n="contact.title">Get In Touch</h2>
+      </div>
+
+      <form class="contact__form reveal" id="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+        <div class="contact__row">
+          <div class="contact__field">
+            <label for="contact-name" data-i18n="contact.name">Name</label>
+            <input type="text" id="contact-name" name="name" required autocomplete="name" />
+          </div>
+          <div class="contact__field">
+            <label for="contact-email" data-i18n="contact.email">Email</label>
+            <input type="email" id="contact-email" name="email" required autocomplete="email" />
+          </div>
+        </div>
+
+        <div class="contact__field">
+          <label for="contact-subject" data-i18n="contact.subject">Subject</label>
+          <input type="text" id="contact-subject" name="subject" required />
+        </div>
+
+        <div class="contact__field">
+          <label for="contact-message" data-i18n="contact.message">Message</label>
+          <textarea id="contact-message" name="message" rows="5" required></textarea>
+        </div>
+
+        <button type="submit" class="contact__btn" data-i18n="contact.send">📩 Send Message</button>
+        <p class="contact__status" id="contact-status"></p>
+      </form>
     </div>
   </section>
 

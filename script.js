@@ -43,7 +43,17 @@
       'hire.subtitle': 'Let\'s turn your idea into reality. Click below to send me a project brief on Useme.',
       'hire.btn': '🚀 Hire Me',
 
-      'footer.copy': '© 2026 Xzar-x — All rights reserved.',
+      'contact.tag': 'Contact',
+      'contact.title': 'Get In Touch',
+      'contact.name': 'Name',
+      'contact.email': 'Email',
+      'contact.subject': 'Subject',
+      'contact.message': 'Message',
+      'contact.send': '📩 Send Message',
+      'contact.success': '✅ Message sent! I\'ll get back to you soon.',
+      'contact.error': '❌ Something went wrong. Please try again.',
+
+      'footer.copy': '© 2026 Xzar — All rights reserved.',
     },
     pl: {
       'hero.badge': 'Developer & Automatyk',
@@ -79,7 +89,17 @@
       'hire.subtitle': 'Zamieńmy Twój pomysł w rzeczywistość. Kliknij poniżej, aby wysłać mi brief projektu na Useme.',
       'hire.btn': '🚀 Zatrudnij Mnie',
 
-      'footer.copy': '© 2026 Xzar-x — Wszelkie prawa zastrzeżone.',
+      'contact.tag': 'Kontakt',
+      'contact.title': 'Napisz Do Mnie',
+      'contact.name': 'Imię',
+      'contact.email': 'Email',
+      'contact.subject': 'Temat',
+      'contact.message': 'Wiadomość',
+      'contact.send': '📩 Wyślij Wiadomość',
+      'contact.success': '✅ Wiadomość wysłana! Odezwę się wkrótce.',
+      'contact.error': '❌ Coś poszło nie tak. Spróbuj ponownie.',
+
+      'footer.copy': '© 2026 Xzar — Wszelkie prawa zastrzeżone.',
     },
   };
 
@@ -218,5 +238,47 @@
     );
 
     revealEls.forEach(el => observer.observe(el));
+  }
+
+  /* ==========================================================
+     8.  CONTACT FORM (Formspree AJAX)
+     ========================================================== */
+  const contactForm = document.getElementById('contact-form');
+  if (contactForm) {
+    contactForm.addEventListener('submit', async function (e) {
+      e.preventDefault();
+
+      const btn = contactForm.querySelector('.contact__btn');
+      const status = document.getElementById('contact-status');
+      const lang = root.getAttribute('data-lang') || 'en';
+
+      btn.disabled = true;
+      btn.textContent = '⏳';
+      status.textContent = '';
+      status.className = 'contact__status';
+
+      try {
+        const data = new FormData(contactForm);
+        const res = await fetch(contactForm.action, {
+          method: 'POST',
+          body: data,
+          headers: { 'Accept': 'application/json' }
+        });
+
+        if (res.ok) {
+          status.textContent = TRANSLATIONS[lang]['contact.success'];
+          status.classList.add('contact__status--ok');
+          contactForm.reset();
+        } else {
+          throw new Error('fail');
+        }
+      } catch {
+        status.textContent = TRANSLATIONS[lang]['contact.error'];
+        status.classList.add('contact__status--err');
+      } finally {
+        btn.disabled = false;
+        btn.textContent = TRANSLATIONS[lang]['contact.send'];
+      }
+    });
   }
 })();
