@@ -1,0 +1,7 @@
+# robots.txt — Xzar-x.github.io
+# Allow all crawlers, point to sitemap
+
+User-agent: *
+Allow: /
+
+Sitemap: https://xzar-x.github.io/sitemap.xml

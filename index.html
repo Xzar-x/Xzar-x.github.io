@@ -1,24 +1,67 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light" data-lang="en">
+<!--
+  Xzar-x Portfolio — SEO-Optimized
+  Last updated: 2026-02-16
+  lang="pl" — primary audience is Polish
+-->
+<html lang="pl" data-theme="light" data-lang="en">
 
 <head>
-  <meta property="og:title" content="Xzar-x | Web Dev, Boty & Security">
-  <meta property="og:description" content="Profesjonalne strony WWW i automatyzacja procesów. Sprawdź moje portfolio.">
-  <meta property="og:image" content="https://xzar-x.github.io/preview.png">
-  <meta property="og:url" content="https://xzar-x.github.io">
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description"
-    content="Xzar — Web Development, Automation & Cybersecurity. WordPress sites, Python bots, Bash scripts and security audits." />
-  <title>Xzar | Web Dev · Automation · Cybersecurity</title>
+
+  <!-- SEO: Unique title with keywords (< 60 chars) -->
+  <title>
+    Xzar-x | Cybersecurity · Trading SMC · GitHub
+  </title>
+
+  <!-- SEO: Meta description (< 160 chars, engaging) -->
+  <meta name="description" content="Xzar-x — portfolio developera i pentestera.
+      Cybersecurity, Trading SMC, automatyzacja Python
+      i narzędzia HTB Hacker. Sprawdź projekty!" />
+
+  <!-- SEO: Keywords for legacy crawlers -->
+  <meta name="keywords" content="Xzar-x, GitHub, Cybersecurity,
+      Trading SMC, HTB Hacker, Web Developer,
+      Python, Pentesting, Bug Bounty" />
+
+  <!-- SEO: Allow full indexing by all bots -->
+  <meta name="robots" content="index, follow" />
+
+  <!-- SEO: Author -->
+  <meta name="author" content="Xzar-x" />
+
+  <!-- SEO: Canonical URL (prevents duplicates) -->
+  <link rel="canonical" href="https://xzar-x.github.io/" />
+
+  <!-- Open Graph — Facebook / LinkedIn / Discord -->
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="pl_PL" />
+  <meta property="og:title" content="Xzar-x | Cybersecurity · Trading SMC" />
+  <meta property="og:description" content="Portfolio developera i pentestera.
+      Projekty security, boty Python i Trading SMC." />
+  <meta property="og:image" content="https://xzar-x.github.io/preview.png" />
+  <meta property="og:url" content="https://xzar-x.github.io/" />
+  <meta property="og:site_name" content="Xzar-x Portfolio" />
+
+  <!-- Twitter Cards -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Xzar-x | Cybersecurity · Trading SMC" />
+  <meta name="twitter:description" content="Portfolio developera i pentestera.
+      Projekty security, boty Python i Trading SMC." />
+  <meta name="twitter:image" content="https://xzar-x.github.io/preview.png" />
+
+  <!-- Favicon -->
   <link rel="icon" type="image/png" href="logo.png" />
+
+  <!-- Stylesheet -->
   <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
 
   <!-- ====== HEADER ====== -->
-  <header class="header">
+  <header class="header" role="banner">
     <div class="container">
       <a href="#" class="logo" aria-label="Home">
         <img src="logo.png" alt="Xzar-x Logo" class="logo__img" />
@@ -34,367 +77,491 @@
 
         <!-- Theme Toggle -->
         <div class="theme-toggle" id="theme-toggle" role="button" tabindex="0" aria-label="Toggle theme">
-          <span class="theme-toggle__label">Trust</span>
+          <span class="theme-toggle__label">
+            Trust
+          </span>
           <span class="theme-toggle__track"></span>
         </div>
       </div>
     </div>
   </header>
 
-  <!-- ====== HERO ====== -->
-  <section class="hero" id="hero">
-    <!-- background effects -->
-    <div class="hero__grid" aria-hidden="true"></div>
-    <div class="hero__orb hero__orb--1" aria-hidden="true"></div>
-    <div class="hero__orb hero__orb--2" aria-hidden="true"></div>
+  <!--
+    SEO: <main> wraps all primary content.
+    Improves accessibility & crawler comprehension.
+  -->
+  <main id="main-content" role="main">
 
-    <div class="hero__content container">
-      <span class="hero__badge" data-i18n="hero.badge">Developer &amp; Automator</span>
+    <!-- ====== HERO ====== -->
+    <section class="hero" id="hero">
+      <!-- background effects -->
+      <div class="hero__grid" aria-hidden="true"></div>
+      <div class="hero__orb hero__orb--1" aria-hidden="true"></div>
+      <div class="hero__orb hero__orb--2" aria-hidden="true"></div>
 
-      <h1 class="hero__title">
-        <span class="glitch" data-text="Building the Web." data-i18n="hero.title1">Building the Web.</span><br />
-        <span class="highlight glitch" data-text="Automating the Rest." data-i18n="hero.title2">Automating the
-          Rest.</span>
-      </h1>
+      <div class="hero__content container">
+        <span class="hero__badge" data-i18n="hero.badge">Developer &amp; Automator</span>
 
-      <p class="hero__subtitle" data-i18n="hero.subtitle">
-        From pixel-perfect WordPress sites to intelligent Python bots
-        and hardened security scripts — I ship solutions that work.
-      </p>
+        <!--
+          SEO: H1 contains target keywords.
+          data-i18n handles translations.
+        -->
+        <h1 class="hero__title">
+          <span class="glitch" data-text="Xzar-x — Cybersecurity," data-i18n="hero.title1">Xzar-x —
+            Cybersecurity,</span>
+          <br />
+          <span class="highlight glitch" data-text="Trading SMC &amp; HTB Hacker" data-i18n="hero.title2">Trading SMC
+            &amp; HTB Hacker</span>
+        </h1>
 
-      <a href="#services" class="hero__cta" data-i18n="hero.cta">
-        See What I Do&ensp;↓
-      </a>
-    </div>
-  </section>
-
-  <!-- ====== ABOUT ME ====== -->
-  <section class="about" id="about">
-    <div class="container">
-      <div class="section-heading reveal">
-        <span class="section-heading__tag" data-i18n="about.tag">About</span>
-        <h2 class="section-heading__title" data-i18n="about.title">O mnie</h2>
-      </div>
-
-      <div class="about__layout reveal">
-        <div class="about__photo-wrapper">
-          <img src="photo.jpg" alt="Xzar — Developer" class="about__photo" />
-        </div>
-
-        <div class="about__text">
-          <p class="about__intro" data-i18n="about.intro">
-            Cześć! Jestem programistą z 15-letnim stażem. Nie uczę się na Twoim zleceniu — dostarczam gotowe, sprawdzone
-            rozwiązania.
-          </p>
-
-          <h3 class="about__subtitle" data-i18n="about.specLabel">Specjalizuję się w:</h3>
-
-          <ul class="about__list">
-            <li class="about__list-item reveal" data-i18n="about.spec1">
-              ✅ <strong>Profesjonalne Strony i Sklepy:</strong> Tworzę szybkie, nowoczesne witryny, które sprzedają
-              (WordPress, Wix, Custom).
-            </li>
-            <li class="about__list-item reveal" data-i18n="about.spec2">
-              ✅ <strong>Naprawa i Optymalizacja:</strong> Coś nie działa? Strona wolno chodzi? Naprawiam błędy, z
-              którymi inni sobie nie radzą.
-            </li>
-            <li class="about__list-item reveal" data-i18n="about.spec3">
-              ✅ <strong>Bezpieczeństwo Danych:</strong> Gwarantuję, że Twoja strona i dane klientów są bezpieczne
-              (audyty security, RODO).
-            </li>
-          </ul>
-
-          <h3 class="about__subtitle" data-i18n="about.whyLabel">Dlaczego warto ze mną współpracować?</h3>
-
-          <ul class="about__list">
-            <li class="about__list-item reveal" data-i18n="about.why1">
-              🎯 <strong>Gwarancja jakości:</strong> Koduję "czysto" — strona będzie działać latami.
-            </li>
-            <li class="about__list-item reveal" data-i18n="about.why2">
-              🎯 <strong>Komunikacja:</strong> Mówię po ludzku, nie technicznym żargonem.
-            </li>
-            <li class="about__list-item reveal" data-i18n="about.why3">
-              🎯 <strong>Faktura:</strong> Oczywiście wystawiam fakturę VAT (przez Useme).
-            </li>
-          </ul>
-
-          <p class="about__cta-text" data-i18n="about.ctaText">
-            Zobacz moje portfolio poniżej (FocusTrader) — to dowód, że potrafię budować zaawansowane systemy. Twój
-            projekt też będzie w dobrych rękach.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ====== SERVICES ====== -->
-  <section class="services" id="services">
-    <div class="container">
-      <div class="section-heading reveal">
-        <span class="section-heading__tag" data-i18n="services.tag">Services</span>
-        <h2 class="section-heading__title" data-i18n="services.title">What I Bring to the Table</h2>
-      </div>
-
-      <div class="services__grid">
-        <!-- Card 1 -->
-        <article class="service-card reveal">
-          <span class="service-card__number">01.</span>
-          <span class="service-card__icon" aria-hidden="true">🌐</span>
-          <h3 class="service-card__title" data-i18n="services.web.title">WordPress &amp; Web Sites</h3>
-          <p class="service-card__desc" data-i18n="services.web.desc">
-            Custom themes, blazing-fast performance tuning, e-commerce setups
-            and full-stack web solutions tailored to your brand.
-          </p>
-        </article>
-
-        <!-- Card 2 -->
-        <article class="service-card service-card--featured reveal">
-          <span class="service-card__number">02.</span>
-          <span class="service-card__icon" aria-hidden="true">🤖</span>
-          <h3 class="service-card__title" data-i18n="services.bots.title">Bots &amp; Automation</h3>
-          <p class="service-card__desc" data-i18n="services.bots.desc">
-            Python &amp; Bash scripts that automate repetitive tasks, scrape data,
-            integrate APIs and keep your workflow humming 24/7.
-          </p>
-        </article>
-
-        <!-- Card 3 -->
-        <article class="service-card reveal">
-          <span class="service-card__number">03.</span>
-          <span class="service-card__icon" aria-hidden="true">🛡️</span>
-          <h3 class="service-card__title" data-i18n="services.sec.title">Cybersecurity &amp; Scripts</h3>
-          <p class="service-card__desc" data-i18n="services.sec.desc">
-            Penetration testing, security auditing, hardening scripts
-            and custom tooling to keep your infrastructure locked down.
-          </p>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- ====== PROJECTS ====== -->
-  <section class="projects" id="projects">
-    <div class="container">
-      <div class="section-heading reveal">
-        <span class="section-heading__tag" data-i18n="projects.tag">Projects</span>
-        <h2 class="section-heading__title" data-i18n="projects.title">My Projects</h2>
-      </div>
-
-      <div class="projects__grid">
-        <!-- ShadowMap -->
-        <a href="https://github.com/Xzar-x/shadowmap" target="_blank" rel="noopener noreferrer"
-          class="project-card reveal">
-          <div class="project-card__header">
-            <span class="project-card__icon" aria-hidden="true">⚔️</span>
-            <span class="project-card__lang">Python</span>
-          </div>
-          <h3 class="project-card__title">ShadowMap</h3>
-          <p class="project-card__desc" data-i18n="projects.shadowmap.desc">
-            Automated recon &amp; reporting toolkit for Bug Bounty hunting. Reconnaissance, enumeration and report
-            generation in one CLI.
-          </p>
-        </a>
-
-        <!-- FocusTrader -->
-        <a href="https://www.focustrader.pl" target="_blank" rel="noopener noreferrer" class="project-card reveal">
-          <div class="project-card__header">
-            <span class="project-card__icon" aria-hidden="true">📈</span>
-            <span class="project-card__lang">PHP / MySQL</span>
-          </div>
-          <h3 class="project-card__title">FocusTrader</h3>
-          <p class="project-card__desc" data-i18n="projects.focustrader.desc">
-            Custom SMC-based trading assistant — smart money concepts analysis, automated signals and position
-            management.
-          </p>
-        </a>
-
-        <!-- VulnMap -->
-        <a href="https://github.com/Xzar-x/vulnmap" target="_blank" rel="noopener noreferrer"
-          class="project-card reveal">
-          <div class="project-card__header">
-            <span class="project-card__icon" aria-hidden="true">🗺️</span>
-            <span class="project-card__lang">Python</span>
-          </div>
-          <h3 class="project-card__title">VulnMap</h3>
-          <p class="project-card__desc" data-i18n="projects.vulnmap.desc">
-            Vulnerability mapping tool — scan, identify and catalog security weaknesses across network infrastructure.
-          </p>
-        </a>
-
-        <!-- HashMap -->
-        <a href="https://github.com/Xzar-x/hashmap" target="_blank" rel="noopener noreferrer"
-          class="project-card reveal">
-          <div class="project-card__header">
-            <span class="project-card__icon" aria-hidden="true">🔐</span>
-            <span class="project-card__lang">Python</span>
-          </div>
-          <h3 class="project-card__title">HashMap</h3>
-          <p class="project-card__desc" data-i18n="projects.hashmap.desc">
-            Hash identification &amp; cracking utility — recognize hash types and run dictionary/brute-force attacks.
-          </p>
-        </a>
-
-        <!-- Dotfiles Backup -->
-        <a href="https://github.com/Xzar-x/github-release-dotfiles-backup" target="_blank" rel="noopener noreferrer"
-          class="project-card reveal">
-          <div class="project-card__header">
-            <span class="project-card__icon" aria-hidden="true">💾</span>
-            <span class="project-card__lang">Shell</span>
-          </div>
-          <h3 class="project-card__title">Dotfiles Backup</h3>
-          <p class="project-card__desc" data-i18n="projects.dotfiles.desc">
-            Automated dotfiles backup via GitHub Releases — version-controlled config snapshots with one command.
-          </p>
-        </a>
-
-        <!-- ZdrowieNaBis -->
-        <a href="https://zdrowienabis.pl" target="_blank" rel="noopener noreferrer" class="project-card reveal">
-          <div class="project-card__header">
-            <span class="project-card__icon" aria-hidden="true">🌿</span>
-            <span class="project-card__lang">WordPress</span>
-          </div>
-          <h3 class="project-card__title">ZdrowieNaBis</h3>
-          <p class="project-card__desc" data-i18n="projects.zdrowie.desc">
-            Professional WP site for the eco industry. Dedicated lightweight theme, zero bloatware,
-            performance-optimized with ACF-powered content management.
-          </p>
-        </a>
-
-        <!-- EduTools -->
-        <a href="https://edu.focustrader.pl" target="_blank" rel="noopener noreferrer" class="project-card reveal">
-          <div class="project-card__header">
-            <span class="project-card__icon" aria-hidden="true">🎓</span>
-            <span class="project-card__lang">PHP / MySQL</span>
-          </div>
-          <h3 class="project-card__title">EduTools</h3>
-          <p class="project-card__desc" data-i18n="projects.edutools.desc">
-            EdTech app streamlining classroom lessons. RWD interface for interactive whiteboards, pure PHP/MySQL
-            backend. Deployed and actively used in a school.
-          </p>
-        </a>
-
-        <!-- EchoSolver -->
-        <a href="#" class="project-card reveal">
-          <div class="project-card__header">
-            <span class="project-card__icon" aria-hidden="true">♿</span>
-            <span class="project-card__lang">Python</span>
-          </div>
-          <h3 class="project-card__title">EchoSolver</h3>
-          <p class="project-card__desc" data-i18n="projects.echosolver.desc">
-            Accessibility tool removing barriers for blind users. Automates CAPTCHA using a hybrid engine (Neural/API)
-            with 100% accuracy. Full NVDA integration & One-File EXE (Zero-Config) architecture.
-          </p>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ====== LINKS / CONNECT ====== -->
-  <section class="links" id="links">
-    <div class="container">
-      <div class="section-heading reveal">
-        <span class="section-heading__tag" data-i18n="links.tag">Connect</span>
-        <h2 class="section-heading__title" data-i18n="links.title">Find Me Online</h2>
-      </div>
-
-      <div class="links__grid">
-        <!-- GitHub -->
-        <a href="https://github.com/Xzar-x" target="_blank" rel="noopener noreferrer" class="link-card reveal">
-          <span class="link-card__icon" aria-hidden="true">💻</span>
-          <div class="link-card__info">
-            <span class="link-card__name">GitHub</span>
-            <span class="link-card__url">github.com/Xzar-x</span>
-          </div>
-        </a>
-
-        <!-- YouTube -->
-        <a href="https://youtube.com/@xzar206" target="_blank" rel="noopener noreferrer" class="link-card reveal">
-          <span class="link-card__icon" aria-hidden="true">🎬</span>
-          <div class="link-card__info">
-            <span class="link-card__name">YouTube</span>
-            <span class="link-card__url">youtube.com/@xzar206</span>
-          </div>
-        </a>
-
-        <!-- Hack The Box -->
-        <a href="https://app.hackthebox.com/public/users/1148597" target="_blank" rel="noopener noreferrer"
-          class="link-card reveal">
-          <span class="link-card__icon" aria-hidden="true">📦</span>
-          <div class="link-card__info">
-            <span class="link-card__name">Hack The Box</span>
-            <span class="link-card__url">hackthebox.com</span>
-          </div>
-        </a>
-
-        <!-- Useme -->
-        <a href="https://useme.com/pl/roles/contractor/jarek-senior-dev,589163/" target="_blank"
-          rel="noopener noreferrer" class="link-card reveal">
-          <span class="link-card__icon" aria-hidden="true">📋</span>
-          <div class="link-card__info">
-            <span class="link-card__name">Useme</span>
-            <span class="link-card__url">useme.com</span>
-          </div>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ====== CONTACT FORM ====== -->
-  <section class="contact" id="contact">
-    <div class="container">
-      <div class="section-heading reveal">
-        <span class="section-heading__tag" data-i18n="contact.tag">Contact</span>
-        <h2 class="section-heading__title" data-i18n="contact.title">Get In Touch</h2>
-      </div>
-
-      <form class="contact__form reveal" id="contact-form" action="https://formspree.io/f/xeelggdp" method="POST">
-        <div class="contact__row">
-          <div class="contact__field">
-            <label for="contact-name" data-i18n="contact.name">Name</label>
-            <input type="text" id="contact-name" name="name" required autocomplete="name" />
-          </div>
-          <div class="contact__field">
-            <label for="contact-email" data-i18n="contact.email">Email</label>
-            <input type="email" id="contact-email" name="email" required autocomplete="email" />
-          </div>
-        </div>
-
-        <div class="contact__field">
-          <label for="contact-subject" data-i18n="contact.subject">Subject</label>
-          <input type="text" id="contact-subject" name="subject" required />
-        </div>
-
-        <div class="contact__field">
-          <label for="contact-message" data-i18n="contact.message">Message</label>
-          <textarea id="contact-message" name="message" rows="5" required></textarea>
-        </div>
-
-        <button type="submit" class="contact__btn" data-i18n="contact.send">📩 Send Message</button>
-        <p class="contact__status" id="contact-status"></p>
-      </form>
-    </div>
-  </section>
-
-  <!-- ====== HIRE ME CTA ====== -->
-  <section class="hire" id="hire">
-    <div class="container">
-      <div class="hire__content reveal">
-        <h2 class="hire__title glitch" data-text="" data-i18n="hire.title">Ready to Work Together?</h2>
-        <p class="hire__subtitle" data-i18n="hire.subtitle">
-          Let's turn your idea into reality. Click below to send me a project brief on Useme.
+        <p class="hero__subtitle" data-i18n="hero.subtitle">
+          From pixel-perfect WordPress sites
+          to intelligent Python bots and hardened
+          security scripts — I ship solutions
+          that work.
         </p>
-        <a href="https://useme.com/pl/jobs/new/invitation/589163/" target="_blank" rel="noopener noreferrer"
-          class="hire__btn" data-i18n="hire.btn">
-          🚀 Hire Me
+
+        <a href="#services" class="hero__cta" data-i18n="hero.cta">
+          See What I Do&ensp;↓
         </a>
       </div>
-    </div>
-  </section>
+    </section>
+
+    <!-- ====== ABOUT ME ====== -->
+    <section class="about" id="about">
+      <div class="container">
+        <div class="section-heading reveal">
+          <span class="section-heading__tag" data-i18n="about.tag">About</span>
+          <h2 class="section-heading__title" data-i18n="about.title">O mnie</h2>
+        </div>
+
+        <div class="about__layout reveal">
+          <div class="about__photo-wrapper">
+            <img src="photo.jpg" alt="Xzar-x — Developer &amp; Pentester" class="about__photo" />
+          </div>
+
+          <div class="about__text">
+            <p class="about__intro" data-i18n="about.intro">
+              Cześć! Jestem programistą
+              z 15-letnim stażem. Nie uczę się
+              na Twoim zleceniu — dostarczam
+              gotowe, sprawdzone rozwiązania.
+            </p>
+
+            <h3 class="about__subtitle" data-i18n="about.specLabel">Specjalizuję się w:</h3>
+
+            <ul class="about__list">
+              <li class="about__list-item reveal" data-i18n="about.spec1">
+                ✅ <strong>Profesjonalne Strony
+                  i Sklepy:</strong> Tworzę szybkie,
+                nowoczesne witryny, które sprzedają
+                (WordPress, Wix, Custom).
+              </li>
+              <li class="about__list-item reveal" data-i18n="about.spec2">
+                ✅ <strong>Naprawa
+                  i Optymalizacja:</strong> Coś nie
+                działa? Strona wolno chodzi?
+                Naprawiam błędy, z którymi inni
+                sobie nie radzą.
+              </li>
+              <li class="about__list-item reveal" data-i18n="about.spec3">
+                ✅ <strong>Bezpieczeństwo
+                  Danych:</strong> Gwarantuję, że
+                Twoja strona i dane klientów są
+                bezpieczne (audyty security, RODO).
+              </li>
+            </ul>
+
+            <h3 class="about__subtitle" data-i18n="about.whyLabel">Dlaczego warto współpracować?</h3>
+
+            <ul class="about__list">
+              <li class="about__list-item reveal" data-i18n="about.why1">
+                🎯 <strong>Gwarancja
+                  jakości:</strong> Koduję "czysto"
+                — strona będzie działać latami.
+              </li>
+              <li class="about__list-item reveal" data-i18n="about.why2">
+                🎯 <strong>Komunikacja:</strong>
+                Mówię po ludzku, nie technicznym
+                żargonem.
+              </li>
+              <li class="about__list-item reveal" data-i18n="about.why3">
+                🎯 <strong>Faktura:</strong>
+                Oczywiście wystawiam fakturę VAT
+                (przez Useme).
+              </li>
+            </ul>
+
+            <p class="about__cta-text" data-i18n="about.ctaText">
+              Zobacz moje portfolio poniżej
+              (FocusTrader) — to dowód, że
+              potrafię budować zaawansowane
+              systemy. Twój projekt też będzie
+              w dobrych rękach.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====== SERVICES ====== -->
+    <section class="services" id="services">
+      <div class="container">
+        <div class="section-heading reveal">
+          <span class="section-heading__tag" data-i18n="services.tag">Services</span>
+          <h2 class="section-heading__title" data-i18n="services.title">What I Bring to the Table</h2>
+        </div>
+
+        <div class="services__grid">
+          <!-- Card 1 -->
+          <article class="service-card reveal">
+            <span class="service-card__number">
+              01.
+            </span>
+            <span class="service-card__icon" aria-hidden="true">🌐</span>
+            <h3 class="service-card__title" data-i18n="services.web.title">WordPress &amp; Web Sites</h3>
+            <p class="service-card__desc" data-i18n="services.web.desc">
+              Custom themes, blazing-fast
+              performance tuning, e-commerce
+              setups and full-stack web solutions
+              tailored to your brand.
+            </p>
+          </article>
+
+          <!-- Card 2 -->
+          <article class="service-card
+              service-card--featured reveal">
+            <span class="service-card__number">
+              02.
+            </span>
+            <span class="service-card__icon" aria-hidden="true">🤖</span>
+            <h3 class="service-card__title" data-i18n="services.bots.title">Bots &amp; Automation</h3>
+            <p class="service-card__desc" data-i18n="services.bots.desc">
+              Python &amp; Bash scripts that
+              automate repetitive tasks, scrape
+              data, integrate APIs and keep your
+              workflow humming 24/7.
+            </p>
+          </article>
+
+          <!-- Card 3 -->
+          <article class="service-card reveal">
+            <span class="service-card__number">
+              03.
+            </span>
+            <span class="service-card__icon" aria-hidden="true">🛡️</span>
+            <h3 class="service-card__title" data-i18n="services.sec.title">Cybersecurity &amp; Scripts</h3>
+            <p class="service-card__desc" data-i18n="services.sec.desc">
+              Penetration testing, security
+              auditing, hardening scripts and
+              custom tooling to keep your
+              infrastructure locked down.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====== PROJECTS ====== -->
+    <section class="projects" id="projects">
+      <div class="container">
+        <div class="section-heading reveal">
+          <span class="section-heading__tag" data-i18n="projects.tag">Projects</span>
+          <h2 class="section-heading__title" data-i18n="projects.title">My Projects</h2>
+        </div>
+
+        <div class="projects__grid">
+          <!-- ShadowMap -->
+          <a href="https://github.com/Xzar-x/shadowmap" target="_blank" rel="noopener noreferrer"
+            class="project-card reveal">
+            <div class="project-card__header">
+              <span class="project-card__icon" aria-hidden="true">⚔️</span>
+              <span class="project-card__lang">
+                Python
+              </span>
+            </div>
+            <h3 class="project-card__title">
+              ShadowMap
+            </h3>
+            <p class="project-card__desc" data-i18n="projects.shadowmap.desc">
+              Automated recon &amp; reporting
+              toolkit for Bug Bounty hunting.
+              Reconnaissance, enumeration and
+              report generation in one CLI.
+            </p>
+          </a>
+
+          <!-- FocusTrader -->
+          <a href="https://www.focustrader.pl" target="_blank" rel="noopener noreferrer" class="project-card reveal">
+            <div class="project-card__header">
+              <span class="project-card__icon" aria-hidden="true">📈</span>
+              <span class="project-card__lang">
+                PHP / MySQL
+              </span>
+            </div>
+            <h3 class="project-card__title">
+              FocusTrader
+            </h3>
+            <p class="project-card__desc" data-i18n="projects.focustrader.desc">
+              Custom SMC-based trading assistant
+              — smart money concepts analysis,
+              automated signals and position
+              management.
+            </p>
+          </a>
+
+          <!-- VulnMap -->
+          <a href="https://github.com/Xzar-x/vulnmap" target="_blank" rel="noopener noreferrer"
+            class="project-card reveal">
+            <div class="project-card__header">
+              <span class="project-card__icon" aria-hidden="true">🗺️</span>
+              <span class="project-card__lang">
+                Python
+              </span>
+            </div>
+            <h3 class="project-card__title">
+              VulnMap
+            </h3>
+            <p class="project-card__desc" data-i18n="projects.vulnmap.desc">
+              Vulnerability mapping tool — scan,
+              identify and catalog security
+              weaknesses across network
+              infrastructure.
+            </p>
+          </a>
+
+          <!-- HashMap -->
+          <a href="https://github.com/Xzar-x/hashmap" target="_blank" rel="noopener noreferrer"
+            class="project-card reveal">
+            <div class="project-card__header">
+              <span class="project-card__icon" aria-hidden="true">🔐</span>
+              <span class="project-card__lang">
+                Python
+              </span>
+            </div>
+            <h3 class="project-card__title">
+              HashMap
+            </h3>
+            <p class="project-card__desc" data-i18n="projects.hashmap.desc">
+              Hash identification &amp; cracking
+              utility — recognize hash types and
+              run dictionary/brute-force attacks.
+            </p>
+          </a>
+
+          <!-- Dotfiles Backup -->
+          <a href="https://github.com/Xzar-x/github-release-dotfiles-backup" target="_blank" rel="noopener noreferrer"
+            class="project-card reveal">
+            <div class="project-card__header">
+              <span class="project-card__icon" aria-hidden="true">💾</span>
+              <span class="project-card__lang">
+                Shell
+              </span>
+            </div>
+            <h3 class="project-card__title">
+              Dotfiles Backup
+            </h3>
+            <p class="project-card__desc" data-i18n="projects.dotfiles.desc">
+              Automated dotfiles backup via
+              GitHub Releases — version-controlled
+              config snapshots with one command.
+            </p>
+          </a>
+
+          <!-- ZdrowieNaBis -->
+          <a href="https://zdrowienabis.pl" target="_blank" rel="noopener noreferrer" class="project-card reveal">
+            <div class="project-card__header">
+              <span class="project-card__icon" aria-hidden="true">🌿</span>
+              <span class="project-card__lang">
+                WordPress
+              </span>
+            </div>
+            <h3 class="project-card__title">
+              ZdrowieNaBis
+            </h3>
+            <p class="project-card__desc" data-i18n="projects.zdrowie.desc">
+              Professional WP site for the eco
+              industry. Dedicated lightweight
+              theme, zero bloatware,
+              performance-optimized with
+              ACF-powered content management.
+            </p>
+          </a>
+
+          <!-- EduTools -->
+          <a href="https://edu.focustrader.pl" target="_blank" rel="noopener noreferrer" class="project-card reveal">
+            <div class="project-card__header">
+              <span class="project-card__icon" aria-hidden="true">🎓</span>
+              <span class="project-card__lang">
+                PHP / MySQL
+              </span>
+            </div>
+            <h3 class="project-card__title">
+              EduTools
+            </h3>
+            <p class="project-card__desc" data-i18n="projects.edutools.desc">
+              EdTech app streamlining classroom
+              lessons. RWD interface for
+              interactive whiteboards, pure
+              PHP/MySQL backend. Deployed and
+              actively used in a school.
+            </p>
+          </a>
+
+          <!-- EchoSolver -->
+          <a href="#" class="project-card reveal">
+            <div class="project-card__header">
+              <span class="project-card__icon" aria-hidden="true">♿</span>
+              <span class="project-card__lang">
+                Python
+              </span>
+            </div>
+            <h3 class="project-card__title">
+              EchoSolver
+            </h3>
+            <p class="project-card__desc" data-i18n="projects.echosolver.desc">
+              Accessibility tool removing
+              barriers for blind users. Automates
+              CAPTCHA using a hybrid engine
+              (Neural/API) with 100% accuracy.
+              Full NVDA integration &amp;
+              One-File EXE (Zero-Config).
+            </p>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====== LINKS / CONNECT ====== -->
+    <section class="links" id="links">
+      <div class="container">
+        <div class="section-heading reveal">
+          <span class="section-heading__tag" data-i18n="links.tag">Connect</span>
+          <h2 class="section-heading__title" data-i18n="links.title">Find Me Online</h2>
+        </div>
+
+        <div class="links__grid">
+          <!-- GitHub -->
+          <a href="https://github.com/Xzar-x" target="_blank" rel="noopener noreferrer" class="link-card reveal">
+            <span class="link-card__icon" aria-hidden="true">💻</span>
+            <div class="link-card__info">
+              <span class="link-card__name">
+                GitHub
+              </span>
+              <span class="link-card__url">
+                github.com/Xzar-x
+              </span>
+            </div>
+          </a>
+
+          <!-- YouTube -->
+          <a href="https://youtube.com/@xzar206" target="_blank" rel="noopener noreferrer" class="link-card reveal">
+            <span class="link-card__icon" aria-hidden="true">🎬</span>
+            <div class="link-card__info">
+              <span class="link-card__name">
+                YouTube
+              </span>
+              <span class="link-card__url">
+                youtube.com/@xzar206
+              </span>
+            </div>
+          </a>
+
+          <!-- Hack The Box -->
+          <a href="https://app.hackthebox.com/public/users/1148597" target="_blank" rel="noopener noreferrer"
+            class="link-card reveal">
+            <span class="link-card__icon" aria-hidden="true">📦</span>
+            <div class="link-card__info">
+              <span class="link-card__name">
+                Hack The Box
+              </span>
+              <span class="link-card__url">
+                hackthebox.com
+              </span>
+            </div>
+          </a>
+
+          <!-- Useme -->
+          <a href="https://useme.com/pl/roles/contractor/jarek-senior-dev,589163/" target="_blank"
+            rel="noopener noreferrer" class="link-card reveal">
+            <span class="link-card__icon" aria-hidden="true">📋</span>
+            <div class="link-card__info">
+              <span class="link-card__name">
+                Useme
+              </span>
+              <span class="link-card__url">
+                useme.com
+              </span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====== CONTACT FORM ====== -->
+    <section class="contact" id="contact">
+      <div class="container">
+        <div class="section-heading reveal">
+          <span class="section-heading__tag" data-i18n="contact.tag">Contact</span>
+          <h2 class="section-heading__title" data-i18n="contact.title">Get In Touch</h2>
+        </div>
+
+        <form class="contact__form reveal" id="contact-form" action="https://formspree.io/f/xeelggdp" method="POST">
+          <div class="contact__row">
+            <div class="contact__field">
+              <label for="contact-name" data-i18n="contact.name">Name</label>
+              <input type="text" id="contact-name" name="name" required autocomplete="name" />
+            </div>
+            <div class="contact__field">
+              <label for="contact-email" data-i18n="contact.email">Email</label>
+              <input type="email" id="contact-email" name="email" required autocomplete="email" />
+            </div>
+          </div>
+
+          <div class="contact__field">
+            <label for="contact-subject" data-i18n="contact.subject">Subject</label>
+            <input type="text" id="contact-subject" name="subject" required />
+          </div>
+
+          <div class="contact__field">
+            <label for="contact-message" data-i18n="contact.message">Message</label>
+            <textarea id="contact-message" name="message" rows="5" required></textarea>
+          </div>
+
+          <button type="submit" class="contact__btn" data-i18n="contact.send">📩 Send Message</button>
+          <p class="contact__status" id="contact-status"></p>
+        </form>
+      </div>
+    </section>
+
+    <!-- ====== HIRE ME CTA ====== -->
+    <section class="hire" id="hire">
+      <div class="container">
+        <div class="hire__content reveal">
+          <h2 class="hire__title glitch" data-text="" data-i18n="hire.title">Ready to Work Together?</h2>
+          <p class="hire__subtitle" data-i18n="hire.subtitle">
+            Let's turn your idea into reality.
+            Click below to send me a project
+            brief on Useme.
+          </p>
+          <a href="https://useme.com/pl/jobs/new/invitation/589163/" target="_blank" rel="noopener noreferrer"
+            class="hire__btn" data-i18n="hire.btn">
+            🚀 Hire Me
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+  <!-- /main-content -->
 
   <!-- ====== FOOTER ====== -->
-  <footer class="footer">
+  <footer class="footer" role="contentinfo">
     <div class="container">
-      <p data-i18n="footer.copy">&copy; 2026 Xzar &mdash; All rights reserved.</p>
+      <p data-i18n="footer.copy">
+        &copy; 2026 Xzar &mdash;
+        All rights reserved.
+      </p>
     </div>
   </footer>
 
