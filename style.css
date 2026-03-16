@@ -1266,6 +1266,18 @@ section {
 }
 
 /* ============================================================
+   10b.  CONTENT TONE TRANSITION
+         Smooth fade when dark/light content swaps.
+   ============================================================ */
+[data-i18n] {
+  transition: opacity .3s ease;
+}
+
+body.theme-transitioning [data-i18n] {
+  opacity: 0;
+}
+
+/* ============================================================
    10. GLITCH EFFECT (kept subtle — light & dark)
    ============================================================ */
 .glitch {

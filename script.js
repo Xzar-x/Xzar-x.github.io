@@ -138,6 +138,188 @@
   };
 
   /* ==========================================================
+     1b.  DARK MODE CONTENT OVERRIDES
+          Same info — different tone. Hacker/technical vibe.
+          Only keys listed here get swapped in dark mode.
+     ========================================================== */
+  const DARK_OVERRIDES = {
+    en: {
+      'hero.badge':    '> init xzar.exe',
+      'hero.title1':   'Exploiting the Web.',
+      'hero.title2':   'Automating the Rest.',
+      'hero.subtitle':
+        'Python bots, hardened scripts, zero-day mindset' +
+        ' — shipping solutions that don\'t fail under pressure.',
+      'hero.cta': './explore --what-i-do ↓',
+
+      'about.tag':   'whoami',
+      'about.title': 'whoami',
+      'about.intro':
+        '15 yrs in the terminal. I don\'t learn on your' +
+        ' project — I ship battle-tested code. First try.',
+      'about.specLabel': 'root@skills:~$',
+      'about.spec1':
+        '✅ Web Deployment: Fast, hardened sites —' +
+        ' WordPress, custom stack, zero bloatware.',
+      'about.spec2':
+        '✅ Debug & Patch: I fix what others can\'t.' +
+        ' Slow site? That\'s a vulnerability.',
+      'about.spec3':
+        '✅ OpSec & Data: Security audits, GDPR' +
+        ' compliance, attack surface reduction.',
+      'about.whyLabel': 'Why hire this instance?',
+      'about.why1':
+        '🎯 Clean code, zero tech debt' +
+        ' — your stack won\'t rot.',
+      'about.why2':
+        '🎯 No jargon unless you want it.' +
+        ' Clear comms, always.',
+      'about.why3':
+        '🎯 VAT invoice via Useme.' +
+        ' Legit operator.',
+      'about.ctaText':
+        'FocusTrader in portfolio → advanced system,' +
+        ' built solo. Your project: same treatment.',
+
+      'services.tag':   'services.sh',
+      'services.title': './list-services --verbose',
+      'services.web.title': 'Web Deployment Stack',
+      'services.web.desc':
+        'Custom themes, performance hardening,' +
+        ' e-commerce pipelines — production-grade,' +
+        ' no bloat, fully auditable.',
+      'services.bots.title': 'Bots & Automation Scripts',
+      'services.bots.desc':
+        'Python & Bash daemons — scraping, API' +
+        ' integration, task automation.' +
+        ' Runs 24/7. No babysitting.',
+      'services.sec.title': 'Pentesting & Hardening',
+      'services.sec.desc':
+        'Recon, enumeration, exploit dev,' +
+        ' hardening scripts. I find the holes' +
+        ' before the adversary does.',
+
+      'projects.tag':   'ls ~/projects',
+      'projects.title': '~/projects $',
+
+      'links.tag':   'locate --online',
+      'links.title': 'locate xzar --network',
+
+      'hire.title':    'Ready to Deploy?',
+      'hire.subtitle':
+        'Drop a project brief. I\'ll assess,' +
+        ' quote, execute. No fluff.',
+      'hire.btn': '🚀 ./hire-me --now',
+
+      'contact.tag':     'open_channel',
+      'contact.title':   '> open_channel',
+      'contact.name':    'IDENTIFIER',
+      'contact.email':   'RETURN_ADDR',
+      'contact.subject': 'PAYLOAD_SUBJECT',
+      'contact.message': 'MESSAGE_BODY',
+      'contact.send':    '📩 ./send --message',
+
+      'nav.about':     '~/about',
+      'nav.portfolio': '~/projects',
+      'nav.contact':   './contact',
+
+      'footer.copy':
+        '© 2026 Xzar — All rights reserved.' +
+        ' | root@xzar:~$',
+    },
+
+    pl: {
+      'hero.badge':    '> init xzar.exe',
+      'hero.title1':   'Deploying Web.',
+      'hero.title2':   'Automatyzuję Resztę.',
+      'hero.subtitle':
+        'Boty Python, skrypty hardeningowe, mindset' +
+        ' zero-day — dostarczam rozwiązania które' +
+        ' nie padają pod presją.',
+      'hero.cta': './sprawdź-co-robię ↓',
+
+      'about.tag':   'whoami',
+      'about.title': 'whoami',
+      'about.intro':
+        '15 lat w terminalu. Nie uczę się na Twoim' +
+        ' projekcie — dostarczam sprawdzony kod.' +
+        ' Za pierwszym razem.',
+      'about.specLabel': 'root@skills:~$',
+      'about.spec1':
+        '✅ Web Deployment: Szybkie, zahardowane' +
+        ' serwisy — WordPress, custom stack,' +
+        ' zero bloatware.',
+      'about.spec2':
+        '✅ Debug & Patch: Naprawiam to,' +
+        ' czego inni nie ogarniają.' +
+        ' Wolna strona? To podatność.',
+      'about.spec3':
+        '✅ OpSec & Data: Audyty security, RODO,' +
+        ' redukcja attack surface.',
+      'about.whyLabel': 'Dlaczego ten instance?',
+      'about.why1':
+        '🎯 Czysty kod, zero tech debt' +
+        ' — Twój stack nie będzie gniłem.',
+      'about.why2':
+        '🎯 Bez żargonu jeśli nie chcesz.' +
+        ' Czysta komunikacja, zawsze.',
+      'about.why3':
+        '🎯 Faktura VAT przez Useme.' +
+        ' Legalny operator.',
+      'about.ctaText':
+        'FocusTrader w portfolio → zaawansowany' +
+        ' system, zbudowany solo.' +
+        ' Twój projekt: to samo podejście.',
+
+      'services.tag':   'services.sh',
+      'services.title': './lista-usług --verbose',
+      'services.web.title': 'Web Deployment Stack',
+      'services.web.desc':
+        'Autorskie motywy, hardening wydajności,' +
+        ' pipelines e-commerce — produkcyjny' +
+        ' standard, zero bloatu.',
+      'services.bots.title': 'Boty & Skrypty Automatyzacji',
+      'services.bots.desc':
+        'Daemony Python & Bash — scraping,' +
+        ' integracje API, automatyzacja zadań.' +
+        ' Działa 24/7. Bez nadzoru.',
+      'services.sec.title': 'Pentesting & Hardening',
+      'services.sec.desc':
+        'Recon, enumeracja, exploit dev, skrypty' +
+        ' hardeningowe. Znajduję dziury zanim' +
+        ' zrobi to atakujący.',
+
+      'projects.tag':   'ls ~/projekty',
+      'projects.title': '~/projekty $',
+
+      'links.tag':   'locate --online',
+      'links.title': 'locate xzar --network',
+
+      'hire.title':    'Gotowy Na Deploy?',
+      'hire.subtitle':
+        'Wrzuć brief projektu. Ocenię,' +
+        ' wycenię, wykonam. Bez lania wody.',
+      'hire.btn': '🚀 ./zatrudnij-mnie --now',
+
+      'contact.tag':     'open_channel',
+      'contact.title':   '> open_channel',
+      'contact.name':    'IDENTYFIKATOR',
+      'contact.email':   'ADRES_ZWROTNY',
+      'contact.subject': 'TEMAT_PAYLOAD',
+      'contact.message': 'TREŚĆ_WIADOMOŚCI',
+      'contact.send':    '📩 ./wyślij --wiadomość',
+
+      'nav.about':     '~/o-mnie',
+      'nav.portfolio': '~/projekty',
+      'nav.contact':   './kontakt',
+
+      'footer.copy':
+        '© 2026 Xzar — Wszelkie prawa zastrzeżone.' +
+        ' | root@xzar:~$',
+    },
+  };
+
+  /* ==========================================================
      2.  DOM REFERENCES
      ========================================================== */
   const root = document.documentElement;
@@ -177,11 +359,16 @@
      6.  EVENT LISTENERS
      ========================================================== */
 
-  // Theme toggle
+  // Theme toggle — fade content during swap
   themeToggle.addEventListener('click', () => {
-    currentTheme = currentTheme === THEME_LIGHT ? THEME_DARK : THEME_LIGHT;
-    applyTheme(currentTheme);
-    savePref(THEME_KEY, currentTheme);
+    document.body.classList.add('theme-transitioning');
+    setTimeout(() => {
+      currentTheme =
+        currentTheme === THEME_LIGHT ? THEME_DARK : THEME_LIGHT;
+      applyTheme(currentTheme);
+      savePref(THEME_KEY, currentTheme);
+      document.body.classList.remove('theme-transitioning');
+    }, 280);
   });
 
   // Language toggle
@@ -197,7 +384,10 @@
 
   function applyTheme(theme) {
     root.setAttribute('data-theme', theme);
-    toggleLabel.textContent = theme === THEME_DARK ? LABEL_DARK : LABEL_LIGHT;
+    toggleLabel.textContent =
+      theme === THEME_DARK ? LABEL_DARK : LABEL_LIGHT;
+    /* Re-render text with correct tone for active theme */
+    applyLang(currentLang);
   }
 
   function detectSystemTheme() {
@@ -213,7 +403,16 @@
   function applyLang(lang) {
     root.setAttribute('data-lang', lang);
     root.setAttribute('lang', lang);
-    const dict = TRANSLATIONS[lang] || TRANSLATIONS[LANG_EN];
+
+    const base  = TRANSLATIONS[lang]  || TRANSLATIONS[LANG_EN];
+    const dark  = DARK_OVERRIDES[lang] || DARK_OVERRIDES[LANG_EN];
+    const isDark =
+      root.getAttribute('data-theme') === THEME_DARK;
+
+    /* Merge: dark overrides on top of base when in dark mode */
+    const dict = isDark
+      ? Object.assign({}, base, dark)
+      : base;
 
     i18nEls.forEach(el => {
       const key = el.getAttribute('data-i18n');
@@ -222,11 +421,13 @@
       }
     });
 
-    // Update active flag class on language buttons
+    /* Update active flag */
     document.querySelectorAll('.lang-toggle__flag').forEach(flag => {
-      flag.classList.toggle('active', flag.getAttribute('data-lang-active') === lang);
+      flag.classList.toggle(
+        'active',
+        flag.getAttribute('data-lang-active') === lang
+      );
     });
-
   }
 
   /* ==========================================================
