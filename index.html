@@ -105,18 +105,26 @@
         </ul>
       </nav>
 
-      <div class="header__controls">
-        <!-- Language Toggle -->
-        <button class="lang-toggle" id="lang-toggle" aria-label="Switch language">
-          <span class="lang-toggle__flag" data-lang-active="en">🇬🇧</span>
-          <span class="lang-toggle__flag" data-lang-active="pl">🇵🇱</span>
-        </button>
+      <!-- Language Toggle (row-1 on mobile, sits next to logo) -->
+      <button
+        class="lang-toggle"
+        id="lang-toggle"
+        aria-label="Switch language"
+      >
+        <span class="lang-toggle__flag" data-lang-active="en">🇬🇧</span>
+        <span class="lang-toggle__flag" data-lang-active="pl">🇵🇱</span>
+      </button>
 
-        <!-- Theme Toggle -->
-        <div class="theme-toggle" id="theme-toggle" role="button" tabindex="0" aria-label="Toggle theme">
-          <span class="theme-toggle__label">
-            Trust
-          </span>
+      <div class="header__controls">
+        <!-- Theme Toggle (row-2 on mobile, sits next to nav) -->
+        <div
+          class="theme-toggle"
+          id="theme-toggle"
+          role="button"
+          tabindex="0"
+          aria-label="Toggle theme"
+        >
+          <span class="theme-toggle__label">Trust</span>
           <span class="theme-toggle__track"></span>
         </div>
       </div>
