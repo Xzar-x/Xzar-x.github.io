@@ -67,6 +67,10 @@
       'contact.error': '❌ Something went wrong. Please try again.',
 
       'footer.copy': '© 2026 Xzar — All rights reserved.',
+
+      'nav.about': 'About',
+      'nav.portfolio': 'Portfolio',
+      'nav.contact': 'Contact',
     },
     pl: {
       'hero.badge': 'Developer & Automatyk',
@@ -126,6 +130,10 @@
       'contact.error': '❌ Coś poszło nie tak. Spróbuj ponownie.',
 
       'footer.copy': '© 2026 Xzar — Wszelkie prawa zastrzeżone.',
+
+      'nav.about': 'O mnie',
+      'nav.portfolio': 'Portfolio',
+      'nav.contact': 'Kontakt',
     },
   };
 
@@ -263,6 +271,83 @@
 
     revealEls.forEach(el => observer.observe(el));
   }
+
+  /* ==========================================================
+     11. SCROLL SPY
+     ========================================================== */
+
+  function initScrollSpy() {
+    const spySections = [
+      document.getElementById('about'),
+      document.getElementById('projects'),
+      document.getElementById('contact'),
+    ].filter(Boolean);
+
+    const navLinks = document.querySelectorAll('.nav__link');
+    if (!navLinks.length) return;
+
+    function updateActive() {
+      /* Trigger point: 45 % down the viewport */
+      const trigger = window.scrollY + window.innerHeight * 0.45;
+      let activeId = null;
+
+      spySections.forEach(section => {
+        if (section.offsetTop <= trigger) {
+          activeId = section.id;
+        }
+      });
+
+      navLinks.forEach(link => {
+        link.classList.toggle(
+          'active',
+          link.getAttribute('href') === `#${activeId}`
+        );
+      });
+    }
+
+    window.addEventListener('scroll', updateActive, { passive: true });
+    updateActive();
+  }
+
+  initScrollSpy();
+
+  /* ==========================================================
+     12. HAMBURGER MENU
+     ========================================================== */
+
+  function initHamburger() {
+    const hamburger = document.getElementById('nav-hamburger');
+    const navList   = document.getElementById('nav-list');
+    if (!hamburger || !navList) return;
+
+    function close() {
+      hamburger.setAttribute('aria-expanded', 'false');
+      navList.classList.remove('open');
+    }
+
+    function open() {
+      hamburger.setAttribute('aria-expanded', 'true');
+      navList.classList.add('open');
+    }
+
+    hamburger.addEventListener('click', e => {
+      e.stopPropagation();
+      const isOpen = hamburger.getAttribute('aria-expanded') === 'true';
+      isOpen ? close() : open();
+    });
+
+    /* Close on nav link click (scroll → destination) */
+    navList.querySelectorAll('.nav__link').forEach(link => {
+      link.addEventListener('click', close);
+    });
+
+    /* Close on outside click */
+    document.addEventListener('click', e => {
+      if (!e.target.closest('#main-nav')) close();
+    });
+  }
+
+  initHamburger();
 
   /* ==========================================================
      8.  CONTACT FORM (Formspree AJAX)

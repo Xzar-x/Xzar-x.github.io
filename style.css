@@ -333,6 +333,149 @@ section {
 }
 
 /* ============================================================
+   4b.  MAIN NAVIGATION
+   ============================================================ */
+.nav {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.nav__list {
+  display: flex;
+  align-items: center;
+  gap: .25rem;
+  list-style: none;
+}
+
+/* Base nav link */
+.nav__link {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  padding: .4rem 1.05rem;
+  font-size: .76rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  border: 1px solid transparent;
+  border-radius: var(--radius-pill);
+  overflow: hidden;
+  transition:
+    color var(--transition),
+    border-color var(--transition),
+    background var(--transition),
+    box-shadow var(--transition),
+    transform .18s ease;
+}
+
+/* Shimmer sweep — wow effect on hover */
+.nav__link::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    105deg,
+    transparent 35%,
+    rgba(255, 255, 255, .18) 50%,
+    transparent 65%
+  );
+  transform: translateX(-130%);
+  transition: transform .55s ease;
+  pointer-events: none;
+}
+
+.nav__link:hover::before {
+  transform: translateX(130%);
+}
+
+.nav__link:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+  background: var(--accent-glow);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 14px var(--accent-glow);
+}
+
+/* ---- Active state (current section in view) ---- */
+.nav__link.active {
+  color: #fff;
+  background: var(--accent);
+  border-color: var(--accent);
+  animation: navPulse 2.8s ease-in-out infinite;
+}
+
+/* Dark mode: accent is lime — use dark text */
+[data-theme="dark"] .nav__link.active {
+  color: #0b0d0f;
+}
+
+@keyframes navPulse {
+  0%,
+  100% {
+    box-shadow: 0 0 12px var(--accent-glow);
+  }
+  50% {
+    box-shadow:
+      0 0 20px var(--accent-glow),
+      0 0 38px var(--accent-glow);
+  }
+}
+
+/* ---- Hamburger (hidden on desktop) ---- */
+.nav__hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 38px;
+  height: 38px;
+  padding: 6px;
+  background: transparent;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition:
+    border-color var(--transition),
+    background var(--transition);
+}
+
+.nav__hamburger:hover {
+  border-color: var(--accent);
+  background: var(--accent-glow);
+}
+
+.nav__hamburger-bar {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: var(--text-primary);
+  border-radius: 2px;
+  transition:
+    transform .35s cubic-bezier(.4, 0, .2, 1),
+    opacity .25s ease,
+    background var(--transition);
+}
+
+/* Bars → X when open */
+.nav__hamburger[aria-expanded="true"]
+  .nav__hamburger-bar:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.nav__hamburger[aria-expanded="true"]
+  .nav__hamburger-bar:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0);
+}
+
+.nav__hamburger[aria-expanded="true"]
+  .nav__hamburger-bar:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* ============================================================
    5.  HERO SECTION
    ============================================================ */
 .hero {
@@ -1154,6 +1297,55 @@ section {
   section {
     padding: 3.5rem 0;
   }
+
+  /* ---- Mobile nav ---- */
+  .nav__hamburger {
+    display: flex;
+  }
+
+  .nav__list {
+    display: none;
+    position: absolute;
+    top: calc(100% + 1px);
+    left: 50%;
+    transform: translateX(-50%);
+    width: max(220px, 60vw);
+    flex-direction: column;
+    align-items: stretch;
+    background: var(--header-bg);
+    backdrop-filter: blur(var(--header-blur));
+    -webkit-backdrop-filter: blur(var(--header-blur));
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius);
+    padding: .7rem .6rem;
+    gap: .35rem;
+    z-index: 999;
+    box-shadow: var(--shadow-lg);
+  }
+
+  .nav__list.open {
+    display: flex;
+    animation: mobileNavIn .28s cubic-bezier(.4, 0, .2, 1);
+  }
+
+  .nav__link {
+    width: 100%;
+    justify-content: center;
+    padding: .65rem 1rem;
+    font-size: .82rem;
+  }
+
+  @keyframes mobileNavIn {
+    from {
+      opacity: 0;
+      transform: translateX(-50%) translateY(-10px) scale(.97);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0) scale(1);
+    }
+  }
+  /* ---- end mobile nav ---- */
 
   .hero__title {
     font-size: clamp(1.8rem, 7vw, 2.6rem);
