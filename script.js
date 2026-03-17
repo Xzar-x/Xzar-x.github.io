@@ -48,6 +48,7 @@
       'projects.zdrowie.desc': 'Professional WP site for the eco industry. Dedicated lightweight theme, zero bloatware, performance-optimized with ACF-powered content management.',
       'projects.edutools.desc': 'EdTech app streamlining classroom lessons. RWD interface for interactive whiteboards, pure PHP/MySQL backend. Deployed and actively used in a school.',
       'projects.echosolver.desc': 'Accessibility tool removing barriers for blind users. Automates CAPTCHA using a hybrid engine (Neural/API) with 100% accuracy. Full NVDA integration & One-File EXE (Zero-Config) architecture.',
+      'projects.autopilot.desc': 'Lead magnet automation for a leadership coach: diagnostic quiz (Tally) → scoring (Make) → personalized PDF report (PDFMonkey) → participant email → CRM entry (MailerLite). Stack: Tally / Make / PDFMonkey / MailerLite.',
 
       'links.tag': 'Connect',
       'links.title': 'Find Me Online',
@@ -111,6 +112,7 @@
       'projects.zdrowie.desc': 'Profesjonalna witryna WP dla branży eko. Lekki, dedykowany motyw, zero bloatware i optymalizacja wydajności. System ACF zapewniający intuicyjne zarządzanie treścią.',
       'projects.edutools.desc': 'Aplikacja EdTech usprawniająca prowadzenie lekcji. Responsywny interfejs zaprojektowany pod tablice interaktywne. Backend: czysty PHP/MySQL. Wdrożona i aktywnie wykorzystywana w szkole.',
       'projects.echosolver.desc': 'Narzędzie Accessibility usuwające bariery dla osób niewidomych. Automatyzuje CAPTCHA przy użyciu hybrydowego silnika (Neural/API) ze 100% skutecznością. Pełna integracja z NVDA i architektura One-File EXE (Zero-Config).',
+      'projects.autopilot.desc': 'Automatyzacja lead magnet dla coacha liderskiego: quiz diagnostyczny (Tally) → scoring (Make) → spersonalizowany raport PDF (PDFMonkey) → email do uczestnika → zapis do CRM (MailerLite). Stack: Tally / Make / PDFMonkey / MailerLite.',
 
       'links.tag': 'Kontakt',
       'links.title': 'Znajdź Mnie Online',
