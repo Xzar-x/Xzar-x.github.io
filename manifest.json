@@ -1,0 +1,26 @@
+{
+  "name": "Xzar-x Portfolio",
+  "short_name": "Xzar-x",
+  "description": "Portfolio developera i pentestera — Cybersecurity, Trading SMC, Python.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#0d0d0d",
+  "theme_color": "#00ff88",
+  "lang": "pl",
+  "icons": [
+    {
+      "src": "logo.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "logo.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

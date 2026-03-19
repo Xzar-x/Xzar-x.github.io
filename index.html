@@ -51,8 +51,33 @@
       Projekty security, boty Python i Trading SMC." />
   <meta name="twitter:image" content="https://xzar-x.github.io/preview.png" />
 
-  <!-- Favicon -->
-  <link rel="icon" type="image/png" href="logo.png" />
+  <!-- ================================================
+       Favicon — pełny zestaw dla wszystkich przeglądarek
+       Plik logo.png musi być w katalogu głównym obok
+       index.html (tak jak jest teraz).
+       ================================================ -->
+
+  <!-- Fallback: starsze przeglądarki szukają favicon.ico
+       automatycznie w root. Jeśli masz logo.png, możesz
+       wygenerować favicon.ico na: favicon.io lub realfavicongenerator.net
+       i wrzucić obok index.html. -->
+  <link rel="shortcut icon" href="favicon.ico" />
+
+  <!-- Nowoczesne przeglądarki (Chrome, Firefox, Edge) -->
+  <link rel="icon" type="image/png"
+        sizes="32x32" href="logo.png" />
+  <link rel="icon" type="image/png"
+        sizes="16x16" href="logo.png" />
+
+  <!-- Safari / iOS — "Dodaj do ekranu głównego" -->
+  <link rel="apple-touch-icon"
+        sizes="180x180" href="logo.png" />
+
+  <!-- Kolor paska przeglądarki (Android Chrome) -->
+  <meta name="theme-color" content="#00ff88" />
+
+  <!-- PWA Manifest — wymagane dla ikony i instalacji -->
+  <link rel="manifest" href="manifest.json" />
 
   <!-- Stylesheet -->
   <link rel="stylesheet" href="style.css" />

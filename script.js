@@ -594,3 +594,20 @@
     });
   }
 })();
+
+/* =============================================================
+   SERVICE WORKER — rejestracja PWA
+   Musi istnieć plik sw.js w katalogu głównym (obok index.html).
+   ============================================================= */
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker
+      .register('/sw.js')
+      .then(reg => {
+        console.log('[SW] Zarejestrowano:', reg.scope);
+      })
+      .catch(err => {
+        console.warn('[SW] Błąd rejestracji:', err);
+      });
+  });
+}
