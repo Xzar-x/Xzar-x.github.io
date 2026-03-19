@@ -1,5 +1,8 @@
 /* ============================================================
    XZAR-X  —  Dual Personality Theme Engine + i18n
+               + Custom Cursor, Typewriter, Matrix Canvas,
+                 3D Tilt, Scroll Progress, Animated Counters,
+                 Magnetic Buttons, Back-to-Top, Glitch Engine
    ============================================================ */
 
 (() => {
@@ -10,139 +13,281 @@
      ========================================================== */
   const TRANSLATIONS = {
     en: {
-      'hero.badge': 'Developer & Automator',
-      'hero.title1': 'Building the Web.',
-      'hero.title2': 'Automating the Rest.',
-      'hero.subtitle': 'From pixel-perfect WordPress sites to intelligent Python bots and hardened security scripts — I ship solutions that work.',
+      'hero.badge':    'Developer & Automator',
+      'hero.title1':   'Building the Web.',
+      'hero.title2':   'Automating the Rest.',
+      'hero.subtitle':
+        'From pixel-perfect WordPress sites to intelligent' +
+        ' Python bots and hardened security scripts' +
+        ' — I ship solutions that work.',
       'hero.cta': 'See What I Do ↓',
 
-      'about.tag': 'About',
+      'about.tag':   'About',
       'about.title': 'About Me',
-      'about.intro': 'Hi! I\'m a developer with 15 years of experience. I don\'t learn on your project — I deliver ready, proven solutions.',
+      'about.intro':
+        'Hi! I\'m a developer with 15 years of experience.' +
+        ' I don\'t learn on your project' +
+        ' — I deliver ready, proven solutions.',
       'about.specLabel': 'I specialize in:',
-      'about.spec1': '✅ Professional Websites & Stores: I build fast, modern sites that sell (WordPress, Wix, Custom).',
-      'about.spec2': '✅ Repair & Optimization: Something broken? Slow site? I fix issues others can\'t handle.',
-      'about.spec3': '✅ Data Security: I guarantee your site and customer data are safe (security audits, GDPR).',
+      'about.spec1':
+        '✅ Professional Websites & Stores: I build fast,' +
+        ' modern sites that sell (WordPress, Wix, Custom).',
+      'about.spec2':
+        '✅ Repair & Optimization: Something broken?' +
+        ' Slow site? I fix issues others can\'t handle.',
+      'about.spec3':
+        '✅ Data Security: I guarantee your site and' +
+        ' customer data are safe (security audits, GDPR).',
       'about.whyLabel': 'Why work with me?',
-      'about.why1': '🎯 Quality Guarantee: I code "clean" — your site will work for years.',
-      'about.why2': '🎯 Communication: I speak human, not tech jargon.',
-      'about.why3': '🎯 Invoice: Of course I issue a VAT invoice (via Useme).',
-      'about.ctaText': 'Check my portfolio below (FocusTrader) — it\'s proof I can build advanced systems. Your project will be in good hands too.',
+      'about.why1':
+        '🎯 Quality Guarantee: I code "clean"' +
+        ' — your site will work for years.',
+      'about.why2':
+        '🎯 Communication: I speak human, not tech jargon.',
+      'about.why3':
+        '🎯 Invoice: Of course I issue a VAT invoice' +
+        ' (via Useme).',
+      'about.ctaText':
+        'Check my portfolio below (FocusTrader)' +
+        ' — it\'s proof I can build advanced systems.' +
+        ' Your project will be in good hands too.',
 
-      'services.tag': 'Services',
+      'stats.years':        'Years Experience',
+      'stats.projects':     'Projects Delivered',
+      'stats.satisfaction': 'Client Satisfaction',
+      'stats.rating':       'Useme Rating',
+
+      'services.tag':   'Services',
       'services.title': 'What I Bring to the Table',
       'services.web.title': 'WordPress & Web Sites',
-      'services.web.desc': 'Custom themes, blazing-fast performance tuning, e-commerce setups and full-stack web solutions tailored to your brand.',
+      'services.web.desc':
+        'Custom themes, blazing-fast performance tuning,' +
+        ' e-commerce setups and full-stack web solutions' +
+        ' tailored to your brand.',
       'services.bots.title': 'Bots & Automation',
-      'services.bots.desc': 'Python & Bash scripts that automate repetitive tasks, scrape data, integrate APIs and keep your workflow humming 24/7.',
+      'services.bots.desc':
+        'Python & Bash scripts that automate repetitive' +
+        ' tasks, scrape data, integrate APIs and keep' +
+        ' your workflow humming 24/7.',
       'services.sec.title': 'Cybersecurity & Scripts',
-      'services.sec.desc': 'Penetration testing, security auditing, hardening scripts and custom tooling to keep your infrastructure locked down.',
+      'services.sec.desc':
+        'Penetration testing, security auditing,' +
+        ' hardening scripts and custom tooling to keep' +
+        ' your infrastructure locked down.',
 
-      'projects.tag': 'Projects',
+      'projects.tag':   'Projects',
       'projects.title': 'My Projects',
-      'projects.shadowmap.desc': 'Automated recon & reporting toolkit for Bug Bounty hunting. Reconnaissance, enumeration and report generation in one CLI.',
-      'projects.focustrader.desc': 'Custom SMC-based trading assistant — smart money concepts analysis, automated signals and position management.',
-      'projects.vulnmap.desc': 'Vulnerability mapping tool — scan, identify and catalog security weaknesses across network infrastructure.',
-      'projects.hashmap.desc': 'Hash identification & cracking utility — recognize hash types and run dictionary/brute-force attacks.',
-      'projects.dotfiles.desc': 'Automated dotfiles backup via GitHub Releases — version-controlled config snapshots with one command.',
-      'projects.zdrowie.desc': 'Professional WP site for the eco industry. Dedicated lightweight theme, zero bloatware, performance-optimized with ACF-powered content management.',
-      'projects.edutools.desc': 'EdTech app streamlining classroom lessons. RWD interface for interactive whiteboards, pure PHP/MySQL backend. Deployed and actively used in a school.',
-      'projects.echosolver.desc': 'Accessibility tool removing barriers for blind users. Automates CAPTCHA using a hybrid engine (Neural/API) with 100% accuracy. Full NVDA integration & One-File EXE (Zero-Config) architecture.',
-      'projects.autopilot.desc': 'Lead magnet automation for a leadership coach: diagnostic quiz (Tally) → scoring (Make) → personalized PDF report (PDFMonkey) → participant email → CRM entry (MailerLite). Stack: Tally / Make / PDFMonkey / MailerLite.',
+      'projects.shadowmap.desc':
+        'Automated recon & reporting toolkit for Bug' +
+        ' Bounty hunting. Reconnaissance, enumeration' +
+        ' and report generation in one CLI.',
+      'projects.focustrader.desc':
+        'Custom SMC-based trading assistant — smart money' +
+        ' concepts analysis, automated signals and' +
+        ' position management.',
+      'projects.vulnmap.desc':
+        'Vulnerability mapping tool — scan, identify' +
+        ' and catalog security weaknesses across' +
+        ' network infrastructure.',
+      'projects.hashmap.desc':
+        'Hash identification & cracking utility' +
+        ' — recognize hash types and run' +
+        ' dictionary/brute-force attacks.',
+      'projects.dotfiles.desc':
+        'Automated dotfiles backup via GitHub Releases' +
+        ' — version-controlled config snapshots' +
+        ' with one command.',
+      'projects.zdrowie.desc':
+        'Professional WP site for the eco industry.' +
+        ' Dedicated lightweight theme, zero bloatware,' +
+        ' performance-optimized with ACF-powered' +
+        ' content management.',
+      'projects.edutools.desc':
+        'EdTech app streamlining classroom lessons.' +
+        ' RWD interface for interactive whiteboards,' +
+        ' pure PHP/MySQL backend.' +
+        ' Deployed and actively used in a school.',
+      'projects.echosolver.desc':
+        'Accessibility tool removing barriers for blind' +
+        ' users. Automates CAPTCHA using a hybrid engine' +
+        ' (Neural/API) with 100% accuracy.' +
+        ' Full NVDA integration & One-File EXE.',
+      'projects.autopilot.desc':
+        'Lead magnet automation for a leadership coach:' +
+        ' diagnostic quiz (Tally) → scoring (Make)' +
+        ' → personalized PDF report (PDFMonkey)' +
+        ' → participant email → CRM entry (MailerLite).',
 
-      'links.tag': 'Connect',
+      'links.tag':   'Connect',
       'links.title': 'Find Me Online',
 
-      'hire.title': 'Ready to Work Together?',
-      'hire.subtitle': 'Let\'s turn your idea into reality. Click below to send me a project brief on Useme.',
+      'hire.title':    'Ready to Work Together?',
+      'hire.subtitle':
+        'Let\'s turn your idea into reality. Click below' +
+        ' to send me a project brief on Useme.',
       'hire.btn': '🚀 Hire Me',
 
-      'contact.tag': 'Contact',
-      'contact.title': 'Get In Touch',
-      'contact.name': 'Name',
-      'contact.email': 'Email',
+      'contact.tag':     'Contact',
+      'contact.title':   'Get In Touch',
+      'contact.name':    'Name',
+      'contact.email':   'Email',
       'contact.subject': 'Subject',
       'contact.message': 'Message',
-      'contact.send': '📩 Send Message',
-      'contact.success': '✅ Message sent! I\'ll get back to you soon.',
-      'contact.error': '❌ Something went wrong. Please try again.',
+      'contact.send':    '📩 Send Message',
+      'contact.success':
+        '✅ Message sent! I\'ll get back to you soon.',
+      'contact.error':
+        '❌ Something went wrong. Please try again.',
 
       'footer.copy': '© 2026 Xzar — All rights reserved.',
 
-      'nav.about': 'About',
+      'nav.about':     'About',
       'nav.portfolio': 'Portfolio',
-      'nav.contact': 'Contact',
+      'nav.contact':   'Contact',
     },
     pl: {
-      'hero.badge': 'Developer & Automatyk',
-      'hero.title1': 'Buduję Web.',
-      'hero.title2': 'Automatyzuję Resztę.',
-      'hero.subtitle': 'Od perfekcyjnych stron WordPress po inteligentne boty Python i skrypty bezpieczeństwa — dostarczam rozwiązania, które działają.',
+      'hero.badge':    'Developer & Automatyk',
+      'hero.title1':   'Buduję Web.',
+      'hero.title2':   'Automatyzuję Resztę.',
+      'hero.subtitle':
+        'Od perfekcyjnych stron WordPress po inteligentne' +
+        ' boty Python i skrypty bezpieczeństwa' +
+        ' — dostarczam rozwiązania, które działają.',
       'hero.cta': 'Zobacz Co Robię ↓',
 
-      'about.tag': 'O mnie',
+      'about.tag':   'O mnie',
       'about.title': 'O mnie',
-      'about.intro': 'Cześć! Jestem programistą z 15-letnim stażem. Nie uczę się na Twoim zleceniu — dostarczam gotowe, sprawdzone rozwiązania.',
+      'about.intro':
+        'Cześć! Jestem programistą z 15-letnim stażem.' +
+        ' Nie uczę się na Twoim zleceniu' +
+        ' — dostarczam gotowe, sprawdzone rozwiązania.',
       'about.specLabel': 'Specjalizuję się w:',
-      'about.spec1': '✅ Profesjonalne Strony i Sklepy: Tworzę szybkie, nowoczesne witryny, które sprzedają (WordPress, Wix, Custom).',
-      'about.spec2': '✅ Naprawa i Optymalizacja: Coś nie działa? Strona wolno chodzi? Naprawiam błędy, z którymi inni sobie nie radzą.',
-      'about.spec3': '✅ Bezpieczeństwo Danych: Gwarantuję, że Twoja strona i dane klientów są bezpieczne (audyty security, RODO).',
+      'about.spec1':
+        '✅ Profesjonalne Strony i Sklepy: Tworzę szybkie,' +
+        ' nowoczesne witryny, które sprzedają' +
+        ' (WordPress, Wix, Custom).',
+      'about.spec2':
+        '✅ Naprawa i Optymalizacja: Coś nie działa?' +
+        ' Strona wolno chodzi? Naprawiam błędy,' +
+        ' z którymi inni sobie nie radzą.',
+      'about.spec3':
+        '✅ Bezpieczeństwo Danych: Gwarantuję, że' +
+        ' Twoja strona i dane klientów są bezpieczne' +
+        ' (audyty security, RODO).',
       'about.whyLabel': 'Dlaczego warto ze mną współpracować?',
-      'about.why1': '🎯 Gwarancja jakości: Koduję "czysto" — strona będzie działać latami.',
-      'about.why2': '🎯 Komunikacja: Mówię po ludzku, nie technicznym żargonem.',
-      'about.why3': '🎯 Faktura: Oczywiście wystawiam fakturę VAT (przez Useme).',
-      'about.ctaText': 'Zobacz moje portfolio poniżej (FocusTrader) — to dowód, że potrafię budować zaawansowane systemy. Twój projekt też będzie w dobrych rękach.',
+      'about.why1':
+        '🎯 Gwarancja jakości: Koduję "czysto"' +
+        ' — strona będzie działać latami.',
+      'about.why2':
+        '🎯 Komunikacja: Mówię po ludzku,' +
+        ' nie technicznym żargonem.',
+      'about.why3':
+        '🎯 Faktura: Oczywiście wystawiam fakturę VAT' +
+        ' (przez Useme).',
+      'about.ctaText':
+        'Zobacz moje portfolio poniżej (FocusTrader)' +
+        ' — to dowód, że potrafię budować zaawansowane' +
+        ' systemy. Twój projekt też będzie' +
+        ' w dobrych rękach.',
 
-      'services.tag': 'Usługi',
+      'stats.years':        'Lat Doświadczenia',
+      'stats.projects':     'Projektów',
+      'stats.satisfaction': 'Zadowolonych Klientów',
+      'stats.rating':       'Ocena Useme',
+
+      'services.tag':   'Usługi',
       'services.title': 'Co Mogę Ci Zaoferować',
       'services.web.title': 'WordPress & Strony WWW',
-      'services.web.desc': 'Autorskie motywy, optymalizacja wydajności, sklepy e-commerce i kompleksowe rozwiązania webowe dopasowane do Twojej marki.',
+      'services.web.desc':
+        'Autorskie motywy, optymalizacja wydajności,' +
+        ' sklepy e-commerce i kompleksowe rozwiązania' +
+        ' webowe dopasowane do Twojej marki.',
       'services.bots.title': 'Boty & Automatyzacja',
-      'services.bots.desc': 'Skrypty Python & Bash automatyzujące powtarzalne zadania, scraping danych, integracje API — Twój workflow działa 24/7.',
+      'services.bots.desc':
+        'Skrypty Python & Bash automatyzujące' +
+        ' powtarzalne zadania, scraping danych,' +
+        ' integracje API — Twój workflow działa 24/7.',
       'services.sec.title': 'Cyberbezpieczeństwo & Skrypty',
-      'services.sec.desc': 'Testy penetracyjne, audyty bezpieczeństwa, skrypty hardeningowe i narzędzia do ochrony Twojej infrastruktury.',
+      'services.sec.desc':
+        'Testy penetracyjne, audyty bezpieczeństwa,' +
+        ' skrypty hardeningowe i narzędzia do ochrony' +
+        ' Twojej infrastruktury.',
 
-      'projects.tag': 'Projekty',
+      'projects.tag':   'Projekty',
       'projects.title': 'Moje Projekty',
-      'projects.shadowmap.desc': 'Zautomatyzowany toolkit rekonesansu i raportowania do Bug Bounty. Skanowanie, enumeracja i generowanie raportów w jednym CLI.',
-      'projects.focustrader.desc': 'Asystent tradingowy oparty na SMC — analiza Smart Money Concepts, automatyczne sygnały i zarządzanie pozycjami.',
-      'projects.vulnmap.desc': 'Narzędzie do mapowania podatności — skanuj, identyfikuj i kataloguj słabości bezpieczeństwa w infrastrukturze sieciowej.',
-      'projects.hashmap.desc': 'Narzędzie do identyfikacji i łamania hashy — rozpoznawanie typów hashy oraz ataki słownikowe i brute-force.',
-      'projects.dotfiles.desc': 'Automatyczny backup dotfiles przez GitHub Releases — wersjonowane snapshoty konfiguracji jednym poleceniem.',
-      'projects.zdrowie.desc': 'Profesjonalna witryna WP dla branży eko. Lekki, dedykowany motyw, zero bloatware i optymalizacja wydajności. System ACF zapewniający intuicyjne zarządzanie treścią.',
-      'projects.edutools.desc': 'Aplikacja EdTech usprawniająca prowadzenie lekcji. Responsywny interfejs zaprojektowany pod tablice interaktywne. Backend: czysty PHP/MySQL. Wdrożona i aktywnie wykorzystywana w szkole.',
-      'projects.echosolver.desc': 'Narzędzie Accessibility usuwające bariery dla osób niewidomych. Automatyzuje CAPTCHA przy użyciu hybrydowego silnika (Neural/API) ze 100% skutecznością. Pełna integracja z NVDA i architektura One-File EXE (Zero-Config).',
-      'projects.autopilot.desc': 'Automatyzacja lead magnet dla coacha liderskiego: quiz diagnostyczny (Tally) → scoring (Make) → spersonalizowany raport PDF (PDFMonkey) → email do uczestnika → zapis do CRM (MailerLite). Stack: Tally / Make / PDFMonkey / MailerLite.',
+      'projects.shadowmap.desc':
+        'Zautomatyzowany toolkit rekonesansu i' +
+        ' raportowania do Bug Bounty. Skanowanie,' +
+        ' enumeracja i generowanie raportów w jednym CLI.',
+      'projects.focustrader.desc':
+        'Asystent tradingowy oparty na SMC — analiza' +
+        ' Smart Money Concepts, automatyczne sygnały' +
+        ' i zarządzanie pozycjami.',
+      'projects.vulnmap.desc':
+        'Narzędzie do mapowania podatności — skanuj,' +
+        ' identyfikuj i kataloguj słabości bezpieczeństwa' +
+        ' w infrastrukturze sieciowej.',
+      'projects.hashmap.desc':
+        'Narzędzie do identyfikacji i łamania hashy' +
+        ' — rozpoznawanie typów hashy oraz ataki' +
+        ' słownikowe i brute-force.',
+      'projects.dotfiles.desc':
+        'Automatyczny backup dotfiles przez GitHub' +
+        ' Releases — wersjonowane snapshoty konfiguracji' +
+        ' jednym poleceniem.',
+      'projects.zdrowie.desc':
+        'Profesjonalna witryna WP dla branży eko. Lekki,' +
+        ' dedykowany motyw, zero bloatware i optymalizacja' +
+        ' wydajności. System ACF zapewniający intuicyjne' +
+        ' zarządzanie treścią.',
+      'projects.edutools.desc':
+        'Aplikacja EdTech usprawniająca prowadzenie lekcji.' +
+        ' Responsywny interfejs zaprojektowany pod tablice' +
+        ' interaktywne. Backend: czysty PHP/MySQL.' +
+        ' Wdrożona i aktywnie wykorzystywana w szkole.',
+      'projects.echosolver.desc':
+        'Narzędzie Accessibility usuwające bariery dla' +
+        ' osób niewidomych. Automatyzuje CAPTCHA przy' +
+        ' użyciu hybrydowego silnika (Neural/API)' +
+        ' ze 100% skutecznością. Pełna integracja z NVDA.',
+      'projects.autopilot.desc':
+        'Automatyzacja lead magnet dla coacha liderskiego:' +
+        ' quiz diagnostyczny (Tally) → scoring (Make)' +
+        ' → spersonalizowany raport PDF (PDFMonkey)' +
+        ' → email do uczestnika → zapis do CRM (MailerLite).',
 
-      'links.tag': 'Kontakt',
+      'links.tag':   'Kontakt',
       'links.title': 'Znajdź Mnie Online',
 
-      'hire.title': 'Gotowy Na Współpracę?',
-      'hire.subtitle': 'Zamieńmy Twój pomysł w rzeczywistość. Kliknij poniżej, aby wysłać mi brief projektu na Useme.',
+      'hire.title':    'Gotowy Na Współpracę?',
+      'hire.subtitle':
+        'Zamieńmy Twój pomysł w rzeczywistość. Kliknij' +
+        ' poniżej, aby wysłać mi brief projektu na Useme.',
       'hire.btn': '🚀 Zatrudnij Mnie',
 
-      'contact.tag': 'Kontakt',
-      'contact.title': 'Napisz Do Mnie',
-      'contact.name': 'Imię',
-      'contact.email': 'Email',
+      'contact.tag':     'Kontakt',
+      'contact.title':   'Napisz Do Mnie',
+      'contact.name':    'Imię',
+      'contact.email':   'Email',
       'contact.subject': 'Temat',
       'contact.message': 'Wiadomość',
-      'contact.send': '📩 Wyślij Wiadomość',
-      'contact.success': '✅ Wiadomość wysłana! Odezwę się wkrótce.',
-      'contact.error': '❌ Coś poszło nie tak. Spróbuj ponownie.',
+      'contact.send':    '📩 Wyślij Wiadomość',
+      'contact.success':
+        '✅ Wiadomość wysłana! Odezwę się wkrótce.',
+      'contact.error':
+        '❌ Coś poszło nie tak. Spróbuj ponownie.',
 
-      'footer.copy': '© 2026 Xzar — Wszelkie prawa zastrzeżone.',
+      'footer.copy':
+        '© 2026 Xzar — Wszelkie prawa zastrzeżone.',
 
-      'nav.about': 'O mnie',
+      'nav.about':     'O mnie',
       'nav.portfolio': 'Portfolio',
-      'nav.contact': 'Kontakt',
+      'nav.contact':   'Kontakt',
     },
   };
 
   /* ==========================================================
      1b.  DARK MODE CONTENT OVERRIDES
-          Same info — different tone. Hacker/technical vibe.
-          Only keys listed here get swapped in dark mode.
      ========================================================== */
   const DARK_OVERRIDES = {
     en: {
@@ -151,7 +296,8 @@
       'hero.title2':   'Automating the Rest.',
       'hero.subtitle':
         'Python bots, hardened scripts, zero-day mindset' +
-        ' — shipping solutions that don\'t fail under pressure.',
+        ' — shipping solutions that don\'t fail' +
+        ' under pressure.',
       'hero.cta': './explore --what-i-do ↓',
 
       'about.tag':   'whoami',
@@ -161,8 +307,8 @@
         ' project — I ship battle-tested code. First try.',
       'about.specLabel': 'root@skills:~$',
       'about.spec1':
-        '✅ Web Deployment: Fast, hardened sites —' +
-        ' WordPress, custom stack, zero bloatware.',
+        '✅ Web Deployment: Fast, hardened sites' +
+        ' — WordPress, custom stack, zero bloatware.',
       'about.spec2':
         '✅ Debug & Patch: I fix what others can\'t.' +
         ' Slow site? That\'s a vulnerability.',
@@ -177,11 +323,15 @@
         '🎯 No jargon unless you want it.' +
         ' Clear comms, always.',
       'about.why3':
-        '🎯 VAT invoice via Useme.' +
-        ' Legit operator.',
+        '🎯 VAT invoice via Useme. Legit operator.',
       'about.ctaText':
         'FocusTrader in portfolio → advanced system,' +
         ' built solo. Your project: same treatment.',
+
+      'stats.years':        'yrs in terminal',
+      'stats.projects':     'payloads shipped',
+      'stats.satisfaction': 'zero fails',
+      'stats.rating':       'Useme score',
 
       'services.tag':   'services.sh',
       'services.title': './list-services --verbose',
@@ -209,8 +359,8 @@
 
       'hire.title':    'Ready to Deploy?',
       'hire.subtitle':
-        'Drop a project brief. I\'ll assess,' +
-        ' quote, execute. No fluff.',
+        'Drop a project brief. I\'ll assess, quote,' +
+        ' execute. No fluff.',
       'hire.btn': '🚀 ./hire-me --now',
 
       'contact.tag':     'open_channel',
@@ -261,25 +411,29 @@
       'about.whyLabel': 'Dlaczego ten instance?',
       'about.why1':
         '🎯 Czysty kod, zero tech debt' +
-        ' — Twój stack nie będzie gniłem.',
+        ' — Twój stack nie będzie gnił.',
       'about.why2':
         '🎯 Bez żargonu jeśli nie chcesz.' +
         ' Czysta komunikacja, zawsze.',
       'about.why3':
-        '🎯 Faktura VAT przez Useme.' +
-        ' Legalny operator.',
+        '🎯 Faktura VAT przez Useme. Legalny operator.',
       'about.ctaText':
-        'FocusTrader w portfolio → zaawansowany' +
-        ' system, zbudowany solo.' +
+        'FocusTrader w portfolio → zaawansowany system,' +
+        ' zbudowany solo.' +
         ' Twój projekt: to samo podejście.',
+
+      'stats.years':        'lat w terminalu',
+      'stats.projects':     'deploymentów',
+      'stats.satisfaction': 'zero failów',
+      'stats.rating':       'ocena Useme',
 
       'services.tag':   'services.sh',
       'services.title': './lista-usług --verbose',
       'services.web.title': 'Web Deployment Stack',
       'services.web.desc':
         'Autorskie motywy, hardening wydajności,' +
-        ' pipelines e-commerce — produkcyjny' +
-        ' standard, zero bloatu.',
+        ' pipelines e-commerce — produkcyjny standard,' +
+        ' zero bloatu.',
       'services.bots.title': 'Boty & Skrypty Automatyzacji',
       'services.bots.desc':
         'Daemony Python & Bash — scraping,' +
@@ -299,8 +453,8 @@
 
       'hire.title':    'Gotowy Na Deploy?',
       'hire.subtitle':
-        'Wrzuć brief projektu. Ocenię,' +
-        ' wycenię, wykonam. Bez lania wody.',
+        'Wrzuć brief projektu. Ocenię, wycenię,' +
+        ' wykonam. Bez lania wody.',
       'hire.btn': '🚀 ./zatrudnij-mnie --now',
 
       'contact.tag':     'open_channel',
@@ -324,31 +478,37 @@
   /* ==========================================================
      2.  DOM REFERENCES
      ========================================================== */
-  const root = document.documentElement;
+  const root        = document.documentElement;
   const themeToggle = document.getElementById('theme-toggle');
-  const langToggle = document.getElementById('lang-toggle');
-  const toggleLabel = document.querySelector('.theme-toggle__label');
+  const langToggle  = document.getElementById('lang-toggle');
+  const toggleLabel = document.querySelector(
+    '.theme-toggle__label'
+  );
   const glitchEls = document.querySelectorAll('.glitch');
-  const i18nEls = document.querySelectorAll('[data-i18n]');
+  const i18nEls   = document.querySelectorAll('[data-i18n]');
   const revealEls = document.querySelectorAll('.reveal');
 
   /* ==========================================================
      3.  CONSTANTS
      ========================================================== */
-  const THEME_KEY = 'xzar-theme';
-  const LANG_KEY = 'xzar-lang';
+  const THEME_KEY   = 'xzar-theme';
+  const LANG_KEY    = 'xzar-lang';
   const THEME_LIGHT = 'light';
-  const THEME_DARK = 'dark';
+  const THEME_DARK  = 'dark';
   const LABEL_LIGHT = 'Light';
-  const LABEL_DARK = 'Dark';
-  const LANG_EN = 'en';
-  const LANG_PL = 'pl';
+  const LABEL_DARK  = 'Dark';
+  const LANG_EN     = 'en';
+  const LANG_PL     = 'pl';
 
   /* ==========================================================
      4.  STATE
      ========================================================== */
   let currentTheme = loadPref(THEME_KEY) || detectSystemTheme();
-  let currentLang = loadPref(LANG_KEY) || LANG_EN;
+  let currentLang  = loadPref(LANG_KEY)  || LANG_EN;
+
+  /* Flag: typewriter plays once — subsequent lang/theme
+     changes just update text instantly. */
+  let typewriterPlayed = false;
 
   /* ==========================================================
      5.  INIT
@@ -356,6 +516,17 @@
   applyTheme(currentTheme);
   applyLang(currentLang);
   initScrollReveal();
+  initScrollSpy();
+  initHamburger();
+  initTypewriter();
+  initMatrixCanvas();
+  initCustomCursor();
+  initTilt();
+  initScrollProgress();
+  initCounters();
+  initMagneticButtons();
+  initBackToTop();
+  initGlitchEngine();
 
   /* ==========================================================
      6.  EVENT LISTENERS
@@ -373,6 +544,14 @@
     }, 280);
   });
 
+  // Keyboard support for theme toggle
+  themeToggle.addEventListener('keydown', e => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      themeToggle.click();
+    }
+  });
+
   // Language toggle
   langToggle.addEventListener('click', () => {
     currentLang = currentLang === LANG_EN ? LANG_PL : LANG_EN;
@@ -388,14 +567,13 @@
     root.setAttribute('data-theme', theme);
     toggleLabel.textContent =
       theme === THEME_DARK ? LABEL_DARK : LABEL_LIGHT;
-    /* Re-render text with correct tone for active theme */
     applyLang(currentLang);
   }
 
   function detectSystemTheme() {
-    return window.matchMedia('(prefers-color-scheme: dark)').matches
-      ? THEME_DARK
-      : THEME_LIGHT;
+    return window.matchMedia(
+      '(prefers-color-scheme: dark)'
+    ).matches ? THEME_DARK : THEME_LIGHT;
   }
 
   /* ==========================================================
@@ -411,7 +589,6 @@
     const isDark =
       root.getAttribute('data-theme') === THEME_DARK;
 
-    /* Merge: dark overrides on top of base when in dark mode */
     const dict = isDark
       ? Object.assign({}, base, dark)
       : base;
@@ -423,13 +600,16 @@
       }
     });
 
-    /* Update active flag */
-    document.querySelectorAll('.lang-toggle__flag').forEach(flag => {
-      flag.classList.toggle(
-        'active',
-        flag.getAttribute('data-lang-active') === lang
-      );
-    });
+    document.querySelectorAll('.lang-toggle__flag')
+      .forEach(flag => {
+        flag.classList.toggle(
+          'active',
+          flag.getAttribute('data-lang-active') === lang
+        );
+      });
+
+    // Sync glitch data-text with current textContent
+    syncGlitchAttributes();
   }
 
   /* ==========================================================
@@ -490,7 +670,6 @@
     if (!navLinks.length) return;
 
     function updateActive() {
-      /* Trigger point: 45 % down the viewport */
       const trigger = window.scrollY + window.innerHeight * 0.45;
       let activeId = null;
 
@@ -508,11 +687,11 @@
       });
     }
 
-    window.addEventListener('scroll', updateActive, { passive: true });
+    window.addEventListener('scroll', updateActive, {
+      passive: true,
+    });
     updateActive();
   }
-
-  initScrollSpy();
 
   /* ==========================================================
      12. HAMBURGER MENU
@@ -523,46 +702,43 @@
     const navList   = document.getElementById('nav-list');
     if (!hamburger || !navList) return;
 
-    function close() {
+    function closeNav() {
       hamburger.setAttribute('aria-expanded', 'false');
       navList.classList.remove('open');
     }
 
-    function open() {
+    function openNav() {
       hamburger.setAttribute('aria-expanded', 'true');
       navList.classList.add('open');
     }
 
     hamburger.addEventListener('click', e => {
       e.stopPropagation();
-      const isOpen = hamburger.getAttribute('aria-expanded') === 'true';
-      isOpen ? close() : open();
+      const isOpen =
+        hamburger.getAttribute('aria-expanded') === 'true';
+      isOpen ? closeNav() : openNav();
     });
 
-    /* Close on nav link click (scroll → destination) */
     navList.querySelectorAll('.nav__link').forEach(link => {
-      link.addEventListener('click', close);
+      link.addEventListener('click', closeNav);
     });
 
-    /* Close on outside click */
     document.addEventListener('click', e => {
-      if (!e.target.closest('#main-nav')) close();
+      if (!e.target.closest('#main-nav')) closeNav();
     });
   }
 
-  initHamburger();
-
   /* ==========================================================
-     8.  CONTACT FORM (Formspree AJAX)
+     13. CONTACT FORM (Formspree AJAX)
      ========================================================== */
   const contactForm = document.getElementById('contact-form');
   if (contactForm) {
     contactForm.addEventListener('submit', async function (e) {
       e.preventDefault();
 
-      const btn = contactForm.querySelector('.contact__btn');
+      const btn    = contactForm.querySelector('.contact__btn');
       const status = document.getElementById('contact-status');
-      const lang = root.getAttribute('data-lang') || 'en';
+      const lang   = root.getAttribute('data-lang') || 'en';
 
       btn.disabled = true;
       btn.textContent = '⏳';
@@ -571,43 +747,491 @@
 
       try {
         const data = new FormData(contactForm);
-        const res = await fetch(contactForm.action, {
-          method: 'POST',
-          body: data,
-          headers: { 'Accept': 'application/json' }
+        const res  = await fetch(contactForm.action, {
+          method:  'POST',
+          body:    data,
+          headers: { 'Accept': 'application/json' },
         });
 
         if (res.ok) {
-          status.textContent = TRANSLATIONS[lang]['contact.success'];
+          status.textContent =
+            TRANSLATIONS[lang]['contact.success'];
           status.classList.add('contact__status--ok');
           contactForm.reset();
         } else {
           throw new Error('fail');
         }
       } catch {
-        status.textContent = TRANSLATIONS[lang]['contact.error'];
+        status.textContent =
+          TRANSLATIONS[lang]['contact.error'];
         status.classList.add('contact__status--err');
       } finally {
         btn.disabled = false;
-        btn.textContent = TRANSLATIONS[lang]['contact.send'];
+        btn.textContent =
+          TRANSLATIONS[lang]['contact.send'];
       }
     });
   }
+
+  /* ==========================================================
+     14. TYPEWRITER EFFECT
+         Runs once on page load for the hero subtitle.
+         Subsequent lang/theme changes just update text
+         normally (no re-animation).
+     ========================================================== */
+
+  function initTypewriter() {
+    const el = document.querySelector('.hero__subtitle');
+    if (!el || typewriterPlayed) return;
+
+    // Delay enough for i18n to have applied the text
+    setTimeout(() => {
+      if (typewriterPlayed) return;
+
+      const text = el.textContent.trim();
+      el.textContent = '';
+      // Ensure visible during animation
+      el.style.opacity = '1';
+
+      let i = 0;
+      function type() {
+        if (i < text.length) {
+          el.textContent += text[i];
+          i++;
+          // Slight random delay for organic feel
+          setTimeout(type, 14 + Math.random() * 18);
+        } else {
+          // Done — clean up inline opacity
+          el.style.opacity = '';
+          typewriterPlayed = true;
+        }
+      }
+
+      type();
+    }, 500);
+  }
+
+  /* ==========================================================
+     15. MATRIX CANVAS
+         Falling katakana / alphanumeric characters.
+         Only visible in dark mode.
+         Very subtle — opacity controlled in CSS.
+     ========================================================== */
+
+  function initMatrixCanvas() {
+    const canvas = document.getElementById('hero-canvas');
+    if (!canvas) return;
+
+    const ctx   = canvas.getContext('2d');
+    const CHARS =
+      'アカサタナハマヤラワイキシチニヒミリケセテネヘメコソト' +
+      'ノホモロヲABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789<>{}[]';
+
+    const FONT_SIZE = 14;
+    let columns, drops;
+
+    function resize() {
+      canvas.width  = canvas.offsetWidth  || canvas.parentElement.offsetWidth;
+      canvas.height = canvas.offsetHeight || canvas.parentElement.offsetHeight;
+      columns = Math.floor(canvas.width / FONT_SIZE);
+      drops   = new Array(columns).fill(0).map(
+        () => Math.floor(Math.random() * -50)
+      );
+    }
+
+    function draw() {
+      const isDark =
+        root.getAttribute('data-theme') === THEME_DARK;
+
+      if (!isDark) {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        requestAnimationFrame(draw);
+        return;
+      }
+
+      // Semi-transparent black fade — creates trail effect
+      ctx.fillStyle = 'rgba(11, 13, 15, 0.055)';
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+      // Character color — subtle lime
+      ctx.fillStyle = 'rgba(180, 248, 46, 0.065)';
+      ctx.font      = `${FONT_SIZE}px monospace`;
+
+      for (let col = 0; col < drops.length; col++) {
+        if (drops[col] < 0) {
+          drops[col]++;
+          continue;
+        }
+
+        const char = CHARS[
+          Math.floor(Math.random() * CHARS.length)
+        ];
+        ctx.fillText(
+          char,
+          col * FONT_SIZE,
+          drops[col] * FONT_SIZE
+        );
+
+        // Reset column at random point after bottom
+        if (
+          drops[col] * FONT_SIZE > canvas.height &&
+          Math.random() > 0.972
+        ) {
+          drops[col] = Math.floor(Math.random() * -30);
+        }
+        drops[col]++;
+      }
+
+      requestAnimationFrame(draw);
+    }
+
+    resize();
+    draw();
+
+    window.addEventListener('resize', resize, { passive: true });
+  }
+
+  /* ==========================================================
+     16. CUSTOM CURSOR
+         Dot:  follows mouse instantly (no lag).
+         Ring: follows with smooth lerp lag (rAF loop).
+         Expands on interactive element hover.
+         Disabled on touch devices.
+     ========================================================== */
+
+  function initCustomCursor() {
+    const dot  = document.getElementById('cursor-dot');
+    const ring = document.getElementById('cursor-ring');
+    if (!dot || !ring) return;
+
+    // Touch device detection — restore normal cursor
+    if (
+      'ontouchstart' in window ||
+      navigator.maxTouchPoints > 0
+    ) {
+      document.body.classList.add('touch-device');
+      return;
+    }
+
+    let mouseX = window.innerWidth  / 2;
+    let mouseY = window.innerHeight / 2;
+    let ringX  = mouseX;
+    let ringY  = mouseY;
+
+    document.addEventListener('mousemove', e => {
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+      // Dot follows instantly
+      dot.style.left = `${mouseX}px`;
+      dot.style.top  = `${mouseY}px`;
+    });
+
+    // Ring follows with lerp — organic lag
+    (function animateRing() {
+      const LAG = 0.11;
+      ringX += (mouseX - ringX) * LAG;
+      ringY += (mouseY - ringY) * LAG;
+      ring.style.left = `${ringX}px`;
+      ring.style.top  = `${ringY}px`;
+      requestAnimationFrame(animateRing);
+    })();
+
+    // Hover state on interactive elements
+    const interactive = document.querySelectorAll(
+      'a, button, [role="button"], .project-card,' +
+      ' .service-card, .link-card, input, textarea'
+    );
+
+    interactive.forEach(el => {
+      el.addEventListener('mouseenter', () => {
+        dot.classList.add('cursor-dot--hover');
+        ring.classList.add('cursor-ring--hover');
+      });
+      el.addEventListener('mouseleave', () => {
+        dot.classList.remove('cursor-dot--hover');
+        ring.classList.remove('cursor-ring--hover');
+      });
+    });
+
+    // Hide cursor when mouse leaves window
+    document.addEventListener('mouseleave', () => {
+      dot.style.opacity  = '0';
+      ring.style.opacity = '0';
+    });
+
+    document.addEventListener('mouseenter', () => {
+      dot.style.opacity  = '';
+      ring.style.opacity = '';
+    });
+  }
+
+  /* ==========================================================
+     17. 3D CARD TILT
+         Applies perspective rotation on mousemove.
+         Disables default CSS hover translateY conflict.
+         Desktop only.
+     ========================================================== */
+
+  function initTilt() {
+    if ('ontouchstart' in window) return;
+    if (window.innerWidth < 768) return;
+
+    const cards = document.querySelectorAll(
+      '.project-card, .service-card'
+    );
+
+    const MAX_ROTATE = 8; // degrees
+
+    cards.forEach(card => {
+      card.classList.add('tilt-enabled');
+
+      card.addEventListener('mouseenter', () => {
+        // Disable transition for immediate tilt response
+        card.style.transition = 'box-shadow var(--transition),' +
+          ' border-color var(--transition)';
+      });
+
+      card.addEventListener('mousemove', e => {
+        const rect    = card.getBoundingClientRect();
+        const x       = e.clientX - rect.left;
+        const y       = e.clientY - rect.top;
+        const centerX = rect.width  / 2;
+        const centerY = rect.height / 2;
+
+        const rotY =  ((x - centerX) / centerX) * MAX_ROTATE;
+        const rotX = -((y - centerY) / centerY) * MAX_ROTATE;
+
+        card.style.transform =
+          `perspective(1000px)` +
+          ` rotateX(${rotX}deg)` +
+          ` rotateY(${rotY}deg)` +
+          ` translateZ(8px)`;
+      });
+
+      card.addEventListener('mouseleave', () => {
+        // Restore smooth transition for reset
+        card.style.transition =
+          'all .5s cubic-bezier(.4,0,.2,1)';
+        card.style.transform = '';
+
+        // Clean up after transition
+        setTimeout(() => {
+          card.style.transition = '';
+        }, 500);
+      });
+    });
+  }
+
+  /* ==========================================================
+     18. SCROLL PROGRESS BAR
+         Fills left-to-right as user scrolls the page.
+     ========================================================== */
+
+  function initScrollProgress() {
+    const bar = document.getElementById('scroll-progress');
+    if (!bar) return;
+
+    function update() {
+      const scrolled   = window.scrollY;
+      const docHeight  =
+        document.documentElement.scrollHeight -
+        window.innerHeight;
+      const pct = docHeight > 0
+        ? Math.min((scrolled / docHeight) * 100, 100)
+        : 0;
+      bar.style.width = `${pct}%`;
+    }
+
+    window.addEventListener('scroll', update, { passive: true });
+    update();
+  }
+
+  /* ==========================================================
+     19. ANIMATED COUNTERS
+         IntersectionObserver triggers count-up animation
+         when stats section enters the viewport.
+         Runs once per counter.
+     ========================================================== */
+
+  function initCounters() {
+    const nums = document.querySelectorAll('.stats__num');
+    if (!nums.length) return;
+
+    if (!('IntersectionObserver' in window)) {
+      nums.forEach(el => {
+        el.textContent = el.getAttribute('data-count');
+      });
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      entries => {
+        entries.forEach(entry => {
+          if (!entry.isIntersecting) return;
+          observer.unobserve(entry.target);
+
+          const target   = parseInt(
+            entry.target.getAttribute('data-count'), 10
+          );
+          const duration = 1400; // ms
+          const start    = performance.now();
+
+          function tick(now) {
+            const elapsed = now - start;
+            const progress = Math.min(elapsed / duration, 1);
+            // Ease-out cubic
+            const eased = 1 - Math.pow(1 - progress, 3);
+            entry.target.textContent =
+              Math.round(eased * target);
+
+            if (progress < 1) {
+              requestAnimationFrame(tick);
+            }
+          }
+
+          requestAnimationFrame(tick);
+        });
+      },
+      { threshold: 0.5 }
+    );
+
+    nums.forEach(el => observer.observe(el));
+  }
+
+  /* ==========================================================
+     20. MAGNETIC BUTTONS
+         CTA buttons attract toward the cursor within
+         a proximity zone of ~80px.
+         Desktop only.
+     ========================================================== */
+
+  function initMagneticButtons() {
+    if ('ontouchstart' in window) return;
+
+    const btns = document.querySelectorAll(
+      '.hero__cta, .hire__btn, .contact__btn'
+    );
+
+    btns.forEach(btn => {
+      btn.addEventListener('mouseenter', () => {
+        btn.style.transition = 'none';
+      });
+
+      btn.addEventListener('mousemove', e => {
+        const rect = btn.getBoundingClientRect();
+        const ox   = e.clientX - (rect.left + rect.width  / 2);
+        const oy   = e.clientY - (rect.top  + rect.height / 2);
+        // 25% of offset distance — subtle attraction
+        btn.style.transform =
+          `translate(${ox * 0.25}px, ${oy * 0.3}px)`;
+      });
+
+      btn.addEventListener('mouseleave', () => {
+        btn.style.transition =
+          'all .55s cubic-bezier(.4,0,.2,1)';
+        btn.style.transform = '';
+        setTimeout(() => {
+          btn.style.transition = '';
+        }, 550);
+      });
+    });
+  }
+
+  /* ==========================================================
+     21. BACK TO TOP BUTTON
+         Shows after 300px scroll.
+         SVG ring tracks scroll progress.
+         Smooth scroll to top on click.
+     ========================================================== */
+
+  function initBackToTop() {
+    const btn      = document.getElementById('back-to-top');
+    const ringFill = document.getElementById('progress-ring');
+    if (!btn) return;
+
+    // SVG circle r=16, circumference = 2π×16 ≈ 100.53
+    const CIRCUMFERENCE = 2 * Math.PI * 16;
+
+    function update() {
+      const scrolled  = window.scrollY;
+      const docHeight =
+        document.documentElement.scrollHeight -
+        window.innerHeight;
+
+      // Show / hide button
+      if (scrolled > 300) {
+        btn.classList.add('visible');
+      } else {
+        btn.classList.remove('visible');
+      }
+
+      // Update SVG ring offset
+      if (ringFill && docHeight > 0) {
+        const progress = Math.min(scrolled / docHeight, 1);
+        const offset   = CIRCUMFERENCE - progress * CIRCUMFERENCE;
+        ringFill.style.strokeDashoffset = offset;
+      }
+    }
+
+    window.addEventListener('scroll', update, { passive: true });
+    update();
+
+    btn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+
+  /* ==========================================================
+     22. GLITCH ENGINE
+         Auto-triggers the glitch animation on .glitch elements
+         at random intervals (~6–12 s).
+     ========================================================== */
+
+  function initGlitchEngine() {
+    if (!glitchEls.length) return;
+
+    function triggerGlitch() {
+      // Sync data-text before each trigger
+      syncGlitchAttributes();
+
+      glitchEls.forEach(el => {
+        el.classList.remove('glitch-active');
+        // Force reflow to restart animation
+        void el.offsetWidth;
+        el.classList.add('glitch-active');
+
+        // Remove class after animation completes
+        setTimeout(() => {
+          el.classList.remove('glitch-active');
+        }, 480);
+      });
+
+      // Next trigger: random 6–13 s
+      setTimeout(
+        triggerGlitch,
+        6000 + Math.random() * 7000
+      );
+    }
+
+    // Initial delay before first glitch
+    setTimeout(triggerGlitch, 3000 + Math.random() * 3000);
+  }
+
 })();
 
 /* =============================================================
-   SERVICE WORKER — rejestracja PWA
-   Musi istnieć plik sw.js w katalogu głównym (obok index.html).
+   SERVICE WORKER — PWA registration
+   Requires sw.js in the root directory.
    ============================================================= */
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', () => {
     navigator.serviceWorker
       .register('/sw.js')
       .then(reg => {
-        console.log('[SW] Zarejestrowano:', reg.scope);
+        console.log('[SW] Registered:', reg.scope);
       })
       .catch(err => {
-        console.warn('[SW] Błąd rejestracji:', err);
+        console.warn('[SW] Registration failed:', err);
       });
   });
 }
